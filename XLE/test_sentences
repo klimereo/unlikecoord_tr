@@ -1,0 +1,109 @@
+****TEST SENTENCES***
+
+A. KONUS- (TO TALK) (PP_hakkinda & PP_uzerine & NP_acc)
+
+PARSE-YES:
+
+(Y)- antik donemler hakkinda ve klasik arabalar hakkinda konustuk (LIKE PP_hakkinda) 
+(Y)- antik donemleri ve klasik arabalari konustuk (LIKE NP_acc)
+(Y)- antik donemler uzerine ve klasik arabalar hakkinda konustular (UNLIKE PP)
+(Y)- antik donemler hakkinda ve klasik arabalari konustuk (PP_hakkinda & NP_acc)
+
+
+PARSE-NO:
+
+(N)- antik donemler hakkinda ve klasik arabalardan dolayi konustuk (PP_hakkinda & PP_dolayi)
+(N)- antik donemleri ve klasik arabalara konustuk (NP_acc & NP_dat)
+(N)- antik donemlere gore ve klasik arabalari konustuk (PP_according & NP_acc)
+(N)- antik donemler uzerine ve klasik arabalara kadar konustuk (PP_uzerine & PP_kadar)
+
+
+B. OL- (TO BE) (PP & NP AdjP)
+
+PARSE-YES
+
+(Y*4)- Bertan zengin bir memur veya saygin bir muhendis olacak (Like NP & NP)
+(Y*4)- film eski bir doneme ait veya arabalar hakkinda olacak (Like PP & PP)
+(Y*2)- firca dogal ve yumusak olmali (AdjP & AdjP)
+(Y*4)- firca dogal kildan ve yumusak olmali (NP & Adjp)
+(Y*2)- konusma hedefe yonelik ve net olmali (PP & AdjP)
+(Y*2)- konusma hedefe yonelik ve sevgiyle olmali (PP & NP)
+
+PARSE-NO
+
+(N)-zengin bir memur veya profesyonelce olmali (NP & AdvP)
+(N)-arabalar hakkinda ve profesyonelce olmali (PP & AdvP)
+(N)-profesyonelce ve klasik olmali (AdvP & AdjP)
+
+
+C. SAYDIR- (TO SWEAR)
+
+PARSE-YES
+
+(Y*2)- Bertan soforler ve belediyeler hakkinda saydirdi (PP_hakkinda & PP_hakkinda)
+(Y*1)- soforlere ve belediyelere saydirdi (NP_dat & NP_dat)
+(Y*1)- Bertan uzunca soforler hakkinda ve belediyelere saydirdi (PP_hakkinda & NP_dat)
+(Y*1)- belediyelere ve soforler hakkinda saydirdi (NP_dat & PP_hakkinda)
+
+PARSE-NO
+
+(N)- soforlerle alakali ve belediyeler hakkinda saydirdi (PP_alakali & PP_hakkinda)
+(N)- soforleri ve belediyelere saydirdi (NP_acc & NP_dat)
+(N)- soforler hakkinda ve belediyeleri saydirdi (PP_hakkinda & NP_acc)
+(N)- soforlerden ve belediyeler hakkinda saydirdi (NP_abl & PP_hakkinda)
+
+D. SUR- (TO LAST)
+
+PARSE-YES
+
+(Y*2)- cetin savaslar aylarca ve yillarca surduler. (AdvP & AdvP)
+(Y*2)- cetin savaslar her hafta ve her yil surduler. (NP & NP)
+(Y*2)- cetin savaslar donemler boyunca ve aylar boyunca surduler (PP_boyunca & PP_boyunca)
+(Y*2)- cetin savaslar her gun ve yillarca surduler (NP & AdvP)
+(Y*4)- cetin savaslar her hafta ve yillar boyunca surduler (NP & PP_boyunca)
+(Y*2)- cetin savaslar gunlerce ve yillar boyunca surduler (AdvP & PP_boyunca)
+
+PARSE-NO
+
+(N)- cetin savaslar aylarca ve fakirlikten dolayi surdu (AdvP & PP_dolayi)
+(N)- cetin savaslar her yil ve her haftadan surdu (NP_nom & NP_abl)
+(N)- cetin savaslar donemler boyunca ve fakirlikten dolayi surdu (PP_boyunca & PP_dolayi)
+(N)- cetin savaslar haftalara ve yillarca surdu (AdvP & NP_dat)
+(N)- cetin savaslar her yil ve fakirlikten dolayi surdu (NP_nom & PP_dolayi)
+(N)- cetin savaslar gunlerce ve haftalara gore surdu (AdvP & PP_gore)
+
+E. VERBAL ADJUNCTS
+
+PARSE-YES
+
+(Y)- yuruyerek ve yorulmadan merkeze ulasirsin (AdvP & AdvP)
+(Y*3)- soforlerle birlikte ve arabalar ile merkeze ulasirsin (PP_birlikte & PP_ile)
+(Y*1)- sevgiyle ve yurekten calisiyoruz (NP_ins & NP_abl)
+(Y*1)- belediyeyle birlikte ve profesyonelce calisiyoruz (PP_birlikte and AdvP)
+(Y*1)- sevgiyle ve yorulmadan calisiyoruz (NP_ins & AdvP)
+(Y*1)- soforlerle birlikte ve arabayla merkeze ulasirsin (PP_birlikte and NP_ins)
+
+PARSE-NO
+
+(Y*1 - ADJ)- masrafli merkeze ulasirsin
+(N)- eskimis calisiyoruz 
+
+F. NOMINAL ADJUNCTS
+
+PARSE-YES
+
+(Y*1)- guzel ve antik enstrumanlari konustuk. (AdjP & AdjP)
+(Y*3)- eski doneme ait ve sevgiyle alakali eserleri konustuk (PP & PP)
+(Y*2)- antik doneme ait ve eskimis eserleri konustuk (AdjP & PP)
+
+PARSE-NO
+
+(N)- guzel ve profesyonelce eserleri konustuk. (AdjP & AdvP)
+(N)- eski doneme ait ve yillarca konustuk. (PP & AdvP)
+
+D. COMPLEX SENTENCES
+
+(Y)- yorulmadan ve uzunca antik ve cetin donemler hakkinda ve klasik ve guzel arabalari konustuk (AdvP_coord + PP_complex_like + NP_complex_like)
+(Y)- arabada ve uzunca klasik doneme ait ve guzel arabalari ve antik ve enstrumanlarla alakali donemler uzerine konustuk (AdvP_coord_unlike + NP_complex_unlike + PP_complex_unlike)
+
+

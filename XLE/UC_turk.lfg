@@ -1,0 +1,585 @@
+UC   TURKISH   CONFIG (1.0)
+  ROOTCAT   S.
+  FILES  .
+  LEXENTRIES   (UC TURKISH).
+  RULES   (UC TURKISH).
+  TEMPLATES   (UC TURKISH).
+  GOVERNABLERELATIONS    SUBJ OBJ OBJ2 COMP XCOMP XCOMP-PRED OBL OBL-?+.
+  SEMANTICFUNCTIONS    ADJUNCT  TOPIC FOCUS POSS STANDARD.
+  NONDISTRIBUTIVES    NUM PERS CONJ-FORM.
+  EPSILON   e.
+OPTIMALITYORDER NOGOOD.
+
+
+----
+UC   TURKISH   RULES (1.0)
+
+
+S     --> (X_MAX: (^ SUBJ) = !
+	      (! CAT)=c N
+              (! CASE)=c NOM)
+       	   X_MAX: ^=!
+              (! CAT) =c V.
+             
+
+
+"Coordination rule"
+COORD --> X_MAX+: ! $ ^;
+	  CNJ
+	  X_MAX: ! $ ^.
+	               
+
+
+"Bar level 2 (maximal) rules"         
+X_MAX --> {
+		{
+		"Adjunct verbal"
+		(COORD: ! $ (^ ADJUNCT)
+			(! CAT) $ {P N ADV })
+		
+		|
+		
+	   	(X_MAX: ! $ (^ ADJUNCT)
+	   	        (! CAT) $ {P N ADV})
+	   	}
+	   	
+ 	   	X_1: ^=!
+ 	       	      (! CAT) =c V 
+ 	       	      
+	    
+	   |
+	   
+           	{
+           	"Adjunct nominal"
+           	(COORD:! $ (^ ADJUNCT)
+           	       (! CAT) $ {P A})
+           	
+           	|
+           	
+           	(X_MAX: ! $ (^ ADJUNCT)
+                        (! CAT) $ {P A})
+                       
+                }
+                
+                
+ 	   	X_1: ^=!
+ 	       	      (! CAT) =c N 
+ 	  
+	   
+	  |
+	   	"Postpositional phrase"
+           	{
+           	COORD: (^ OBJ)=!
+           	
+           	|
+           	
+            	X_MAX: (^ OBJ)=!
+            	}
+            	
+
+ 	   	X_0: ^=!
+ 	       	      (! CAT) =c P
+ 	       	      
+ 	  |
+ 	  
+ 	  
+ 	  	X_0: ^=!
+ 	  	     (! CAT) =c ADV
+ 	  	     
+ 	  |
+ 	  
+ 	  	X_0: ^=!
+ 	  	     (! CAT) =c A
+ 	  }
+ 	  .
+   	  
+
+  
+"Bar Level 1 Rules"
+X_1   --> {	
+		{
+		"Immediately Preverbal position"
+			{
+			(COORD: (^ OBJ) = !) 
+				|
+			(COORD: (^ OBL) = !)
+				|
+			(COORD: (^ XCOMP-PRED) = !)
+			}
+		
+		|
+		
+		   	{
+		   	(X_MAX: (^ OBJ) = !)
+		   	        |
+		   	(X_MAX: (^ OBL) = !)
+		   	 	|
+		   	(X_MAX: (^ XCOMP-PRED) = !)
+		   	}
+	   	}
+	   	"Verbal head"
+ 	   	X_0: ^=!
+ 	       	      (! CAT) =c V 
+ 	       	      
+	    
+	   |
+	   
+		"nominal head"
+		(X_0: ^\CAT = !\CAT
+		     (! CAT) =c D)
+ 	   	 X_0: ^=!
+ 	       	      (! CAT) =c N 
+   	  }.
+   	  
+
+
+----
+UC   TURKISH   TEMPLATES (1.0)
+
+"Ordinary noun template"
+NOUN(P CS NUMBER) 	=  	(^ PRED)='P'
+	      	   		(^ PERS) = 3
+	           		(^ CAT) = N
+	           		(^ CASE) = CS
+	      	   		(^ NUM)=NUMBER.      
+	      
+ADJ(P) 			=  	(^ PRED)='P'
+	           		(^ CAT) = A.
+	           
+	           
+ADV(P) 			=  	(^ PRED)='P'
+	           		(^ CAT) = ADV.
+	           
+"Pronoun template"	      
+PRO(PERSON NUMBER CS)  	=  	(^ PRED) = 'PRO'
+	    	   		(^ CAT) = N
+	    	   		(^ CASE) = CS
+	    	   		(^ PERS) = PERSON
+	    	   		(^ NUM) = NUMBER.
+
+"Postposition template"	      
+POSTP(PR FORM CS) 	=       (^ PRED)='PR<(^ OBJ)>'
+		   		(^ CAT) = P
+		   		(^ OBJ CAT) =c N
+		   		(^ OBJ CASE) =c CS
+		   		(^ PFORM) = FORM.
+
+"Verb with 2 args"
+TRANS(P TENSE ARG-FUNC) =   	(^ PRED)='P<(^ SUBJ)(^ ARG-FUNC)>'
+	   	 		(^ CAT) = V
+	   	 		(^ TNS) = TENSE.
+
+"Verb with 1 arg"
+INTRANS(P TENSE) 	= 	(^ PRED)='P<(^ SUBJ)>'
+	     			(^ CAT) = V
+	     			(^ TNS) = TENSE.
+	     	
+	    
+"Subj-verb agreement + pro drop"	    
+SUBJ_PRO(PERSON NUMBER) =   	{(^ SUBJ PRED) = 'PRO'} 
+				(^ SUBJ NUM) = NUMBER
+				(^ SUBJ CASE) = NOM
+				(^ SUBJ PERS) = PERSON
+				(^ SUBJ CAT) = N.
+
+
+
+----
+UC TURKISH LEXICON (1.0)
+
+
+"Pronominal entries"
+ben		X_0 	* 	@(PRO 1 SG NOM).	    			
+biz		X_0 	* 	@(PRO 1 PL NOM).
+sen		X_0 	* 	@(PRO 2 SG NOM).
+siz		X_0 	* 	@(PRO 2 PL NOM).
+o		X_0 	* 	@(PRO 3 SG NOM).
+onlar		X_0 	* 	@(PRO 3 PL NOM).
+
+
+beni		X_0 	* 	@(PRO 1 SG ACC).	    			
+bizi		X_0 	* 	@(PRO 1 PL ACC).
+seni		X_0 	* 	@(PRO 2 SG ACC).
+sizi		X_0 	* 	@(PRO 2 PL ACC).
+onu		X_0 	* 	@(PRO 3 SG ACC).
+onlari		X_0 	* 	@(PRO 3 PL ACC).
+
+
+bana		X_0 	* 	@(PRO 1 SG DAT).	    			
+bize		X_0 	* 	@(PRO 1 PL DAT).
+sana		X_0 	* 	@(PRO 2 SG DAT).
+size		X_0 	* 	@(PRO 2 PL DAT).
+ona		X_0 	* 	@(PRO 3 SG DAT).
+onlara		X_0 	* 	@(PRO 3 PL DAT).
+
+bende		X_0 	* 	@(PRO 1 SG LOC).	    			
+bizde		X_0 	* 	@(PRO 1 PL LOC).
+sende		X_0 	* 	@(PRO 2 SG LOC).
+sizde		X_0 	* 	@(PRO 2 PL LOC).
+onda		X_0 	* 	@(PRO 3 SG LOC).
+onlarda		X_0 	* 	@(PRO 3 PL LOC).
+
+benle		X_0 	* 	@(PRO 1 SG INS).	    			
+bizle		X_0 	* 	@(PRO 1 PL INS).
+senle		X_0 	* 	@(PRO 2 SG INS).
+sizle		X_0 	* 	@(PRO 2 PL INS).
+onla		X_0 	* 	@(PRO 3 SG INS).
+onlarla		X_0 	* 	@(PRO 3 PL INS).
+
+benden		X_0 	* 	@(PRO 1 SG ABL).	    			
+bizden		X_0 	* 	@(PRO 1 PL ABL).
+senden		X_0 	* 	@(PRO 2 SG ABL).
+sizden		X_0 	* 	@(PRO 2 PL ABL).
+ondan		X_0 	* 	@(PRO 3 SG ABL).
+onlardan	X_0 	* 	@(PRO 3 PL ABL).
+
+
+"Verbal entries"
+
+"to talk"	    			
+konustum   	X_0 	* 	@(TRANS TALK PST OBJ)
+				@(SUBJ_PRO 1 SG)
+				(^ OBJ PRED: {(<- CAT) =c N {(<- CASE) =c ACC | (<- CASE) =c NOM} | (<- CAT) =c P {(<- PFORM) =c HAKKINDA | (<- PFORM) =c UZERINE}}).
+					    			
+konustuk 	X_0 	* 	@(TRANS TALK PST OBJ)
+				@(SUBJ_PRO 1 PL)
+				(^ OBJ PRED: {(<- CAT) =c N {(<- CASE) =c ACC | (<- CASE) =c NOM} | (<- CAT) =c P {(<- PFORM) =c HAKKINDA | (<- PFORM) =c UZERINE}}).
+
+konustun   	X_0 	* 	@(TRANS TALK PST OBJ)
+				@(SUBJ_PRO 2 SG)
+				(^ OBJ PRED: {(<- CAT) =c N {(<- CASE) =c ACC | (<- CASE) =c NOM} | (<- CAT) =c P {(<- PFORM) =c HAKKINDA | (<- PFORM) =c UZERINE}}).
+					    			
+konustunuz 	X_0 	* 	@(TRANS TALK PST OBJ)
+				@(SUBJ_PRO 2 PL)
+				(^ OBJ PRED: {(<- CAT) =c N {(<- CASE) =c ACC | (<- CASE) =c NOM} | (<- CAT) =c P {(<- PFORM) =c HAKKINDA | (<- PFORM) =c UZERINE}}).
+					   	      
+konustu   	X_0 	* 	@(TRANS TALK PST OBJ)
+				@(SUBJ_PRO 3 SG)
+				(^ OBJ PRED: {(<- CAT) =c N {(<- CASE) =c ACC | (<- CASE) =c NOM} | (<- CAT) =c P {(<- PFORM) =c HAKKINDA | (<- PFORM) =c UZERINE}}).
+								
+konustular 	X_0 	* 	@(TRANS TALK PST OBJ)
+				@(SUBJ_PRO 3 PL)
+				(^ OBJ PRED: {(<- CAT) =c N {(<- CASE) =c ACC | (<- CASE) =c NOM} | (<- CAT) =c P {(<- PFORM) =c HAKKINDA | (<- PFORM) =c UZERINE}}).
+				
+				
+"to last"
+surdu   	X_0 	* 	@(TRANS LAST PST OBL)
+				@(SUBJ_PRO 3 SG)
+				(^ OBL PRED: {(<- CAT) =c N (<- CASE) =c NOM | (<- CAT) =c ADV | (<- CAT) =c P (<- PFORM) =c BOYUNCA}).
+				
+surer  		X_0 	* 	@(TRANS LAST AOR OBL)
+				@(SUBJ_PRO 3 SG)
+				(^ OBL PRED: {(<- CAT) =c N (<- CASE) =c NOM | (<- CAT) =c ADV | (<- CAT) =c P (<- PFORM) =c BOYUNCA}).				
+				
+surduler   	X_0 	* 	@(TRANS LAST PST OBL)
+				@(SUBJ_PRO 3 PL)
+				(^ OBL PRED: {(<- CAT) =c N (<- CASE) =c NOM | (<- CAT) =c ADV | (<- CAT) =c P (<- PFORM) =c BOYUNCA}).				
+	      
+	      
+"to swear"
+saydirdim	X_0	*	@(TRANS SWEAR PST OBL)
+				@(SUBJ_PRO 1 SG)
+				(^ OBL PRED: {(<- CAT) =c N (<- CASE) =c DAT | (<- CAT) =c P (<- PFORM) =c HAKKINDA}).
+
+saydirdik	X_0	*	@(TRANS SWEAR PST OBL)
+				@(SUBJ_PRO 1 PL)
+				(^ OBL PRED: {(<- CAT) =c N (<- CASE) =c DAT | (<- CAT) =c P (<- PFORM) =c HAKKINDA}).
+
+saydirdi	X_0	*	@(TRANS SWEAR PST OBL)
+				@(SUBJ_PRO 3 SG)
+				(^ OBL PRED: {(<- CAT) =c N (<- CASE) =c DAT | (<- CAT) =c P (<- PFORM) =c HAKKINDA}).
+				
+"to be"				
+olacak		X_0	*	@(TRANS BE FUT XCOMP-PRED)
+				@(SUBJ_PRO 3 SG)
+				(^ XCOMP-PRED PRED: {(<- CAT) =c N ~{(<- CASE) =c ACC | (<- CASE) =c DAT} | (<- CAT) =c P | (<- CAT) =c A}).
+				
+oldu		X_0	*	@(TRANS BE PST XCOMP-PRED)
+				@(SUBJ_PRO 3 SG)
+				(^ XCOMP-PRED PRED: {(<- CAT) =c N ~{(<- CASE) =c ACC | (<- CASE) =c DAT} | (<- CAT) =c P | (<- CAT) =c A}).
+				
+olur		X_0	*	@(TRANS BE AOR XCOMP-PRED)
+				@(SUBJ_PRO 3 SG)
+				(^ XCOMP-PRED PRED: {(<- CAT) =c N ~{(<- CASE) =c ACC | (<- CASE) =c DAT} | (<- CAT) =c P | (<- CAT) =c A}).
+				
+olmali		X_0	*	@(TRANS BE PRES XCOMP-PRED)
+				@(SUBJ_PRO 3 SG)
+				(^ NECESS) = +
+				(^ XCOMP-PRED PRED: {(<- CAT) =c N ~{(<- CASE) =c ACC | (<- CASE) =c DAT} | (<- CAT) =c P | (<- CAT) =c A}).
+				
+				
+"to work/to train"
+calisiyoruz	X_0	*	@(INTRANS WORK PRES)
+				@(SUBJ_PRO 1 PL)
+				(^ ASPECT) = PROG.
+				
+"to reach"
+ulasirsin	X_0	*	@(TRANS REACH AOR OBL)
+				@(SUBJ_PRO 2 SG)
+				(^ OBL CASE) = DAT.
+								
+								
+							
+
+"Determiners"
+bir		X_0	*	(^ DEF) = -
+				(^ NUM) = SG
+				(^ CAT) = D.
+				
+her		X_0	*	(^ SPEC PRED) = 'EVERY'
+				(^ NUM) = SG
+				(^ CAT) = D.
+
+bu		X_0	*	(^ DEF) = +
+				(^ DEIXIS) = PROX
+				(^ CAT) = D.
+				
+				
+"Nominal entries"						
+	     
+"Car"
+araba	  	X_0 	* 	@(NOUN CAR NOM SG).
+arabalar 	X_0 	* 	@(NOUN CAR NOM PL).
+arabayi   	X_0 	* 	@(NOUN CAR ACC SG).
+arabalari 	X_0 	* 	@(NOUN CAR ACC PL).
+arabaya	  	X_0 	* 	@(NOUN CAR DAT SG).
+arabalara 	X_0 	* 	@(NOUN CAR DAT PL).
+arabada		X_0 	* 	@(NOUN CAR LOC SG).
+arabalarda	X_0 	* 	@(NOUN CAR LOC PL).
+arabayla	X_0 	* 	@(NOUN CAR INS SG).
+arabalarla	X_0 	* 	@(NOUN CAR INS PL).
+arabadan	X_0 	* 	@(NOUN CAR ABL SG).
+arabalardan	X_0 	* 	@(NOUN CAR ABL PL).
+
+"Driver"
+sofor	  	X_0 	* 	@(NOUN DRIVER NOM SG).
+soforler 	X_0 	* 	@(NOUN DRIVER NOM PL).
+soforu   	X_0 	* 	@(NOUN DRIVER ACC SG).
+soforleri 	X_0 	* 	@(NOUN DRIVER ACC PL).
+sofore	  	X_0 	* 	@(NOUN DRIVER DAT SG).
+soforlere 	X_0 	* 	@(NOUN DRIVER DAT PL).
+soforde		X_0 	* 	@(NOUN DRIVER LOC SG).
+soforlerde	X_0 	* 	@(NOUN DRIVER LOC PL).
+soforle		X_0 	* 	@(NOUN DRIVER INS SG).
+soforlerle	X_0 	* 	@(NOUN DRIVER INS PL).
+soforden	X_0 	* 	@(NOUN DRIVER ABL SG).
+soforlerden	X_0 	* 	@(NOUN DRIVER ABL PL).
+
+"Municipality"
+belediye	X_0 	* 	@(NOUN MUNICIPALITY NOM SG).
+belediyeler 	X_0 	* 	@(NOUN MUNICIPALITY NOM PL).
+belediyeyi   	X_0 	* 	@(NOUN MUNICIPALITY ACC SG).
+belediyeleri 	X_0 	* 	@(NOUN MUNICIPALITY ACC PL).
+belediyeye	X_0 	* 	@(NOUN MUNICIPALITY DAT SG).
+belediyelere 	X_0 	* 	@(NOUN MUNICIPALITY DAT PL).
+belediyede	X_0 	* 	@(NOUN MUNICIPALITY LOC SG).
+belediyelerde	X_0 	* 	@(NOUN MUNICIPALITY LOC PL).
+belediyeyle	X_0 	* 	@(NOUN MUNICIPALITY INS SG).
+belediyelerle	X_0 	* 	@(NOUN MUNICIPALITY INS PL).
+belediyeden	X_0 	* 	@(NOUN MUNICIPALITY ABL SG).
+belediyelerden	X_0 	* 	@(NOUN MUNICIPALITY ABL PL).
+
+"Era"
+donem		X_0 	* 	@(NOUN ERA NOM SG).
+donemler	X_0 	* 	@(NOUN ERA NOM PL).
+donemi		X_0 	* 	@(NOUN ERA ACC SG).
+donemleri 	X_0 	* 	@(NOUN ERA ACC PL).
+doneme	 	X_0 	* 	@(NOUN ERA DAT SG).
+donemlere 	X_0 	* 	@(NOUN ERA DAT PL).
+donemde		X_0 	* 	@(NOUN ERA LOC SG).
+donemlerde	X_0 	* 	@(NOUN ERA LOC PL).
+donemle		X_0 	* 	@(NOUN ERA INS SG).
+donemlerle	X_0 	* 	@(NOUN ERA INS PL).
+donemden	X_0 	* 	@(NOUN ERA ABL SG).
+donemlerden	X_0 	* 	@(NOUN ERA ABL PL).
+
+
+"Instrument"
+enstruman	X_0 	* 	@(NOUN INSTRUMENT NOM SG).
+enstrumanlar	X_0 	* 	@(NOUN INSTRUMENT NOM PL).
+enstrumani	X_0 	* 	@(NOUN INSTRUMENT ACC SG).
+enstrumanlari 	X_0 	* 	@(NOUN INSTRUMENT ACC PL).
+enstrumana	X_0 	* 	@(NOUN INSTRUMENT DAT SG).
+enstrumanlara 	X_0 	* 	@(NOUN INSTRUMENT DAT PL).
+enstrumanda	X_0 	* 	@(NOUN INSTRUMENT LOC SG).
+enstrumanlarda	X_0 	* 	@(NOUN INSTRUMENT LOC PL).
+enstrumanla	X_0 	* 	@(NOUN INSTRUMENT INS SG).
+enstrumanlarla	X_0 	* 	@(NOUN INSTRUMENT INS PL).
+enstrumandan	X_0 	* 	@(NOUN INSTRUMENT ABL SG).
+enstrumanlardan	X_0 	* 	@(NOUN INSTRUMENT ABL PL).
+
+"Laundry"
+camasir		X_0 	* 	@(NOUN LAUNDRY NOM SG).
+camasirlar	X_0 	* 	@(NOUN LAUNDRY NOM PL).
+camasiri	X_0 	* 	@(NOUN LAUNDRY ACC SG).
+camasirlari 	X_0 	* 	@(NOUN LAUNDRY ACC PL).
+camasira	X_0 	* 	@(NOUN LAUNDRY DAT SG).
+camasirlara 	X_0 	* 	@(NOUN LAUNDRY DAT PL).
+camasirda	X_0 	* 	@(NOUN LAUNDRY LOC SG).
+camasirlarda	X_0 	* 	@(NOUN LAUNDRY LOC PL).
+camasirla	X_0 	* 	@(NOUN LAUNDRY INS SG).
+camasirlarla	X_0 	* 	@(NOUN LAUNDRY INS PL).
+camasirdan	X_0 	* 	@(NOUN LAUNDRY ABL SG).
+camasirlardan	X_0 	* 	@(NOUN LAUNDRY ABL PL).
+
+
+"Love"
+sevgi		X_0 	* 	@(NOUN LOVE NOM SG).
+sevgiler	X_0 	* 	@(NOUN LOVE NOM PL).
+sevgiyi		X_0 	* 	@(NOUN LOVE ACC SG).
+sevgileri 	X_0 	* 	@(NOUN LOVE ACC PL).
+sevgiye		X_0 	* 	@(NOUN LOVE DAT SG).
+sevgilere 	X_0 	* 	@(NOUN LOVE DAT PL).
+sevgide		X_0 	* 	@(NOUN LOVE LOC SG).
+sevgilerde	X_0 	* 	@(NOUN LOVE LOC PL).
+sevgiyle	X_0 	* 	@(NOUN LOVE INS SG).
+sevgilerle	X_0 	* 	@(NOUN LOVE INS PL).
+sevgiden	X_0 	* 	@(NOUN LOVE ABL SG).
+sevgilerden	X_0 	* 	@(NOUN LOVE ABL PL).
+
+"Aim"
+hedef		X_0 	* 	@(NOUN AIM NOM SG).
+hedefler	X_0 	* 	@(NOUN AIM NOM PL).
+hedefi		X_0 	* 	@(NOUN AIM ACC SG).
+hedefleri 	X_0 	* 	@(NOUN AIM ACC PL).
+hedefe		X_0 	* 	@(NOUN AIM DAT SG).
+hedeflere 	X_0 	* 	@(NOUN AIM DAT PL).
+hedefte		X_0 	* 	@(NOUN AIM LOC SG).
+hedeflerde	X_0 	* 	@(NOUN AIM LOC PL).
+hedefle		X_0 	* 	@(NOUN AIM INS SG).
+hedeflerle	X_0 	* 	@(NOUN AIM INS PL).
+hedeften	X_0 	* 	@(NOUN AIM ABL SG).
+hedeflerden	X_0 	* 	@(NOUN AIM ABL PL).
+
+"Brush"
+firca		X_0 	* 	@(NOUN BRUSH NOM SG).
+fircalar	X_0 	* 	@(NOUN BRUSH NOM PL).
+fircayi		X_0 	* 	@(NOUN BRUSH ACC SG).
+fircalari 	X_0 	* 	@(NOUN BRUSH ACC PL).
+fircaya		X_0 	* 	@(NOUN BRUSH DAT SG).
+fircalara 	X_0 	* 	@(NOUN BRUSH DAT PL).
+fircada		X_0 	* 	@(NOUN BRUSH LOC SG).
+fircalarda	X_0 	* 	@(NOUN BRUSH LOC PL).
+fircayla	X_0 	* 	@(NOUN BRUSH INS SG).
+fircalarla	X_0 	* 	@(NOUN BRUSH INS PL).
+fircadan	X_0 	* 	@(NOUN BRUSH ABL SG).
+fircalardan	X_0 	* 	@(NOUN BRUSH ABL PL).
+
+
+"Bristle"
+kil		X_0 	* 	@(NOUN BRISTLE NOM SG).
+killar		X_0 	* 	@(NOUN BRISTLE NOM PL).
+kili		X_0 	* 	@(NOUN BRISTLE ACC SG).
+killari 	X_0 	* 	@(NOUN BRISTLE ACC PL).
+kila		X_0 	* 	@(NOUN BRISTLE DAT SG).
+killara 	X_0 	* 	@(NOUN BRISTLE DAT PL).
+kilda		X_0 	* 	@(NOUN BRISTLE LOC SG).
+killarda	X_0 	* 	@(NOUN BRISTLE LOC PL).
+killa		X_0 	* 	@(NOUN BRISTLE INS SG).
+killarla	X_0 	* 	@(NOUN BRISTLE INS PL).
+kildan		X_0 	* 	@(NOUN BRISTLE ABL SG).
+killardan	X_0 	* 	@(NOUN BRISTLE ABL PL).
+
+
+"Week"
+hafta		X_0 	* 	@(NOUN WEEK NOM SG).
+haftalar	X_0 	* 	@(NOUN WEEK NOM PL).
+haftayi		X_0 	* 	@(NOUN WEEK ACC SG).
+haftalari 	X_0 	* 	@(NOUN WEEK ACC PL).
+haftaya		X_0 	* 	@(NOUN WEEK DAT SG).
+haftalara 	X_0 	* 	@(NOUN WEEK DAT PL).
+haftada		X_0 	* 	@(NOUN WEEK LOC SG).
+haftalarda	X_0 	* 	@(NOUN WEEK LOC PL).
+haftayla	X_0 	* 	@(NOUN WEEK INS SG).
+haftalarla	X_0 	* 	@(NOUN WEEK INS PL).
+haftadan	X_0 	* 	@(NOUN WEEK ABL SG).
+haftalardan	X_0 	* 	@(NOUN WEEK ABL PL).
+
+
+"Misc"
+
+bicimde		X_0	*	@(NOUN SHAPE LOC SG).
+yerde		X_0	*	@(NOUN PLACE LOC SG).
+antrenorle	X_0	*	@(NOUN TRAINER INS SG).
+zamanda		X_0	*	@(NOUN TIME LOC SG).
+fiyattan	X_0	*	@(NOUN PRICE ABL SG).
+elden		X_0	*	@(NOUN HAND ABL SG).
+kargoyla	X_0	*	@(NOUN CARGO INS SG).
+konusma		X_0	*	@(NOUN SPEECH NOM SG).
+muhendis	X_0	*	@(NOUN ENGINEER NOM SG).
+memur		X_0	*	@(NOUN OFFICER NOM SG).
+Bertan		X_0	*	@(NOUN BERTAN NOM SG).
+film		X_0	*	@(NOUN MOVIE NOM SG).
+savaslar	X_0	*	@(NOUN WAR NOM PL).
+yil		X_0	*	@(NOUN YEAR NOM SG).
+yillar		X_0	*	@(NOUN YEAR NOM PL).
+gun		X_0	*	@(NOUN DAY NOM SG).
+fakirlikten	X_0	*	@(NOUN POVERTY ABL SG).
+aylar		X_0	*	@(NOUN MONTH NOM PL).
+tekneler	X_0	*	@(NOUN BOAT NOM PL).
+cabayla		X_0	*	@(NOUN EFFORT INS SG).
+yurekten	X_0	*	@(NOUN HEART ABL SG).
+merkeze		X_0	*	@(NOUN CENTER DAT SG).
+eserleri	X_0	*	@(NOUN ARTWORK ACC PL).
+yerde		X_0	*	@(NOUN PLACE LOC SG).
+kurallara	X_0	0	@(NOUN RULE DAT PL).
+
+
+
+
+"Postpositional entries"
+hakkinda 	X_0 	*    	@(POSTP ABOUT HAKKINDA NOM).		  		   		  
+ile	 	X_0 	*	@(POSTP WITH ILE NOM).
+boyunca  	X_0 	*	@(POSTP THROUGHOUT BOYUNCA NOM).
+yonelik  	X_0 	*	@(POSTP TOWARDS YONELIK DAT).
+ait	 	X_0 	*    	@(POSTP BELONG AIT DAT).
+kadar	 	X_0 	*    	@(POSTP UNTIL KADAR DAT).
+karsi	 	X_0 	*    	@(POSTP AGAINST KARSI DAT).
+gore	 	X_0 	*    	@(POSTP ACCORDING_TO GORE DAT).
+alakali		X_0 	*	@(POSTP RELATED_TO ALAKALI INS).
+dolayi		X_0 	*	@(POSTP DUE_TO DOLAYI ABL).
+uzerine		X_0 	*	@(POSTP UPON UZERINE NOM).
+birlikte	X_0	*	@(POSTP TOGETHER BIRLIKTE INS).	
+
+ 		  
+"Conjunctions"		  		
+ve	 	CNJ 	* 	(^ CONJ-FORM) = AND
+				(^ NUM) = PL.
+				
+veya	 	CNJ 	* 	(^ CONJ-FORM) = OR.
+	    
+
+"Adjectival entries"
+sonraki  	X_0  	*  	@(ADJ LATER).
+eskimis  	X_0  	*  	@(ADJ OBSOLESCENT).
+antik		X_0	*	@(ADJ ANTIQUATED).
+eski		X_0	*	@(ADJ OLD).
+net		X_0	*	@(ADJ PLAIN).
+guzel		X_0	*	@(ADJ NICE).
+buyuk		X_0	*	@(ADJ BIG).
+masrafli	X_0	*	@(ADJ COSTLY).
+dogal		X_0	*	@(ADJ NATURAL).
+yumusak		X_0	*	@(ADJ SOFT). 
+cetin		X_0	*	@(ADJ BITTER).
+dogru		X_0	*	@(ADJ RIGHT).
+klasik		X_0	*	@(ADJ CLASSICAL).
+saygin		X_0	*	@(ADJ RENOWNED).
+zengin		X_0	*	@(ADJ RICH).
+zor		X_0	*	@(ADJ DIFFICULT).
+siki		X_0	*	@(ADJ HARD).
+	
+
+
+"Adverbial entries"
+yuruyerek 	X_0  	*  	@(ADV ON_FOOT).
+gunlerce	X_0	*	@(ADV FOR_DAYS).
+haftalarca	X_0	*	@(ADV FOR_WEEKS).
+aylarca		X_0	*	@(ADV FOR_MONTHS).
+yillarca	X_0  	*  	@(ADV FOR_YEARS).
+profesyonelce	X_0	*	@(ADV PROFESSIONALLY).
+uzunca		X_0	*	@(ADV LENGTHILY).
+yorulmadan 	X_0	*	@(ADV TIRELESSLY).
+
+		
+
+----
