@@ -1,0 +1,301 @@
+\section{CQL queries} \label{app:cqlqueries}
+
+\subsection{Interpreting CQL queries}
+
+CQL is a specialized language used for querying and searching linguistic data within a corpus. Queries in CQL are written in a code-like format and consist of several components, each serving a specific purpose:\\
+\begin{sloppypar}
+\noindent \textbf{Tags and tag patterns:} Tags represent specific parts of speech (e.g., nouns, verbs, adjectives) and are enclosed in angle brackets (< >). Tag patterns can match multiple sub-types associated with a tag, which can be achieved by an asterisk symbol. For example, the block, \Verb"[tag=`<Postp[:>].*']", targets all types of tokens as long as they are tagged as postpositions. The block \mbox{\Verb"[longtag=`<Det:indef>']"}, however, targets only indefinite determiners, which is a sub-type of determiners. The blocks that target sub-types use the keyword \Verb"longtag" and omit the asterisk symbol.\\
+\end{sloppypar}
+\noindent \textbf{Optional elements:} Optional elements in the query are denoted by placing a question mark (?) after the element. These elements may or may not be present in the pattern being searched. For instance, the block, \Verb"[tag=`Det:indef']?" specifies that this position can be optionally filled by an indefinite determiner.\\
+
+\noindent \textbf{Exclusion:} The ``!='' symbol is used to exclude specific tags or patterns from the query, ensuring that certain elements are not present in the sentence. For example, the block, \Verb"[tag!=`<V[:>].*']", fails to match if the position is filled by any verbal element.\\
+
+\begin{sloppypar}
+	\noindent \textbf{Logical operators:} Logical operators such as ``\&'' (AND) and ``|'' (OR) are used to combine different elements within the query and impose more sophisticated requirements on the patterns. For instance, the block \Verb"[tag=`<N[:>].*' & tag!=`<N><sg>']" targets non-singular nouns in the corpus.
+\end{sloppypar}
+
+\noindent \textbf{Coordinating conjunction:} The presence of a coordinating conjunction is indicated using the \Verb"Cnj:coo" longtag, representing conjunctions like \textit{and} or \textit{or}. \\
+
+\noindent \textbf{Stem:} The \Verb"stem" attribute allows specific verb stems to be targeted, enabling the search for patterns incorporating particular verb forms. For instance, the block, \Verb"[tag=`<V[:>].*' & stem=`run']", targets all verbs with the stem \textit{run}.\\
+
+\noindent \textbf{Word search:} Specific words can be targeted using the \Verb"word" attribute, allowing searches for patterns containing specific lexical items. For example, the block, \Verb"[word=`alien']", matches the word ``alien.''\\
+
+The linear order of elements in the query directly corresponds to the linear order of elements searched in a sentence pattern. This means that the components in the query are interpreted in the same order they appear, allowing for precise control over the arrangement and occurrence of linguistic elements in the targeted patterns.
+
+\subsection{Coordination of unlike categories}
+\subsubsection{PP \& NP}
+
+\begin{figure}[!h]
+	\lstset{
+		escapeinside={(*@}{@*)},basicstyle=\footnotesize\ttfamily
+	}
+	\begin{lstlisting}
+[tag!="<V[:>].*"] [longtag="<Det:indef>"]?[tag="<Adj[:>].*"]?
+[tag="<N[:>].*"] [tag="<Postp[:>].*"] [longtag="<Cnj:coo>"]
+[tag="<Adj[:>].*"]? [longtag="<Det:indef>"]? [tag="<N[:>].*"]
+[tag!="<Postp[:>].*"]
+		\end{lstlisting}
+	\caption{General PP \& NP Query}
+	\label{CQl_ppnp-general}
+\end{figure}
+
+
+\begin{figure}[!h]
+		\lstset{
+	escapeinside={(*@}{@*)},basicstyle=\footnotesize\ttfamily
+}
+	\begin{lstlisting}
+[tag!="<V[:>].*"] [tag="<Adj[:>].*"]? [longtag="<Det:indef>"]? 
+[tag="<N[:>].*"] [tag="<Postp[:>].*"] [longtag="<Cnj:coo>"]
+[tag="<Adj[:>].*"]? [longtag="<Det:indef>"]? [tag="<N[:>].*"]
+[stem="ol" & tag="<V[:>].*"][tag!="<Postp[:>].*"]
+	\end{lstlisting}
+	\caption{PP \& NP \textsc{to be} Query}
+	\label{CQl_ppnp-olmak}
+\end{figure}
+
+
+\begin{figure}[!h]
+		\lstset{
+	escapeinside={(*@}{@*)},basicstyle=\footnotesize\ttfamily
+}
+		\begin{lstlisting}
+[tag="<Adj[:>].*"]? [longtag="<Det:indef>"]? [tag="<N[:>].*"]
+[tag="<Postp[:>].*"] [longtag="<Cnj:coo>"] [tag="<Adj[:>].*"]?
+[longtag = "<Det:indef>"]? [tag="<N[:>].*"] [tag!="<Postp[:>].*"] 
+[tag="<V[:>].*" & stem="dusun"]
+		\end{lstlisting}
+	\caption{PP \& NP \textsc{to think/consider} Query}
+	\label{CQl_ppnp-düşünmek}
+\end{figure}
+
+The query in Figure \ref{CQl_ppnp-konuşmak} additionally specifies that the postpositional head of the first conjunct may alternatively be occupied by the word \textit{hakkında} `about'. This stems from the fact that the automatic POS-tagger employed in the corpus sometimes tags \textit{hakkında} as a locative noun even though it was classified as a type of postposition by \citet[pp.\ 100--102]{kornfilt97}.
+
+\begin{figure}[!h]
+		\lstset{
+	escapeinside={(*@}{@*)},basicstyle=\footnotesize\ttfamily
+		}
+		\begin{lstlisting}
+[tag!="<V[:>].*"] [tag="<Adj[:>].*"]? [longtag="<Det:indef>"]?
+[tag="<N[:>].*"] [tag="<Postp[:>].*" | word="hakkinda"]
+[tag="<Cnj:coo>"][tag="<Adj[:>].*"]? [longtag="<Det:indef>"]?
+[tag="<N[:>].*"][tag!="<Postp[:>].*"] 
+[tag="<V[:>].*" & stem="konus"]
+		\end{lstlisting}
+	\caption{PP \& NP \textsc{to talk/converse/speak} Query}
+	\label{CQl_ppnp-konuşmak}
+\end{figure}
+
+\newpage
+\subsubsection{PP \& AdvP}
+
+\begin{figure}[!h]
+		\lstset{
+			escapeinside={(*@}{@*)},basicstyle=\footnotesize\ttfamily
+		}
+		\begin{lstlisting}
+[tag="<Adj[:>].*"]? [longtag="<Det:indef>"]? [tag="<N[:>].*"]
+[tag="<Postp[:>].*"] [longtag="<Cnj:coo>"] [tag="<Adv[:>].*"]
+[tag="<V[:>].*"]
+		\end{lstlisting}
+	\caption{General PP \& AdvP Query}
+	\label{CQl_pp-advpgeneral}
+\end{figure}
+
+\subsubsection{PP \& AdjP}
+
+\begin{figure}[!h]
+	\lstset{
+		escapeinside={(*@}{@*)},basicstyle=\footnotesize\ttfamily
+	}
+	\begin{lstlisting}
+[tag="<Adj[:>].*"]? [tag="<Det:indef>"]? [tag="<N[:>].*"]
+[tag="<Postp[:>].*"] [longtag="<Cnj:coo>"] [tag = "<Adv[:>].*"]?
+[tag = "<Adj[:>].*"] [tag="<V[:>].*"]
+	\end{lstlisting}
+	\caption{General PP \& AdjP Query}
+	\label{CQl_pp-adjpgeneral}
+\end{figure}
+
+
+\subsubsection{NP \& AdjP}
+
+\begin{figure}[!h]
+	\lstset{
+		escapeinside={(*@}{@*)},basicstyle=\footnotesize\ttfamily
+	}
+	\begin{lstlisting}
+[tag != "<V[:>].*"][tag = "<Adj[:>].*"]?[tag = "<Det:indef>"]?
+[tag = "<N[:>].*"] [longtag = "<Cnj:coo>"][tag = "<Adv[:>].*"]?
+[tag = "<Adj[:>].*"][stem= "ol" & tag= "<V[:>].*"]
+	\end{lstlisting}
+	\caption{NP \& AdjP \textsc{to be} Query}
+	\label{CQl_np-adjptobe}
+\end{figure}
+
+\subsubsection{NP \& AdvP}
+
+\begin{figure}[!h]
+	\lstset{
+		escapeinside={(*@}{@*)},basicstyle=\footnotesize\ttfamily
+	}
+	\begin{lstlisting}
+[tag!="<V[:>].*"] [tag="<Num>"]?[tag="<N[:>].*"] [longtag="<Cnj:coo>"] 
+[tag="<Adv[:>].*"] [tag="<V[:>].*" & stem="sur"]
+	\end{lstlisting}
+	\caption{NP (numerical) \& AdvP \textsc{to last} Query}
+	\label{CQl_np-advplast}
+\end{figure}
+
+\begin{figure}[!h]
+	\lstset{
+		escapeinside={(*@}{@*)},basicstyle=\footnotesize\ttfamily
+	}
+	\begin{lstlisting}
+[tag!="<V[:>].*"][tag="<Adj[:>].*"]? [longtag=``<Det:indef>'']?
+[tag="<N[:>].*"] [longtag="<Cnj:coo>"] [tag="<Adv[:>].*"]
+[tag="<V[:>].*" & stem="hallet"] 
+	\end{lstlisting}
+	\caption{NP \& AdvP \textsc{to handle} Query}
+	\label{CQl_np-advphallet}
+\end{figure}
+
+\newpage
+
+\subsection{Coordination of unlike cases}
+
+\begin{figure}[!h]
+	\lstset{
+		escapeinside={(*@}{@*)},basicstyle=\footnotesize\ttfamily
+	}
+	\begin{lstlisting}
+[tag != "<V[:>].*"] [tag = "<Adj[:>].*"]? 
+[longtag = "<Det:indef>"]? [(longtag = "<N><dat>") | 
+(longtag = "<N><gen>" | longtag = "<N><abl>") | longtag = "<N><ins>" 
+| longtag = "<N><loc>"] [longtag = "<Cnj:coo>"] [tag = "<Adj[:>].*"]? 
+[longtag = "<Det:indef>"]? [longtag = "<N><acc>"] 
+[tag != "<N[:>].*" & tag != "<Postp[:>].*"]
+	\end{lstlisting}
+	\caption{NP($\neg$acc) \& NP(acc) Query}
+	\label{CQl_npacc}
+\end{figure}
+
+\begin{figure}[!h]
+	\lstset{
+		escapeinside={(*@}{@*)},basicstyle=\footnotesize\ttfamily
+	}
+	\begin{lstlisting}
+[tag != "<V[:>].*"] [tag = "<Adj[:>].*"]? 
+[longtag = "<Det:indef>"]? [(longtag = "<N><acc>") | 
+(longtag = "<N><gen>" | longtag = "<N><abl>") | longtag = "<N><ins>" 
+| longtag = "<N><loc>"] [longtag = "<Cnj:coo>"] [tag = "<Adj[:>].*"]? 
+[longtag = "<Det:indef>"]? [longtag = "<N><dat>"] 
+[tag != "<N[:>].*" & tag != "<Postp[:>].*"]
+	\end{lstlisting}
+	\caption{NP($\neg$dat) \& NP(dat) Query}
+	\label{CQl_npdat}
+\end{figure}
+
+\begin{figure}[!h]
+	\lstset{
+		escapeinside={(*@}{@*)},basicstyle=\footnotesize\ttfamily
+	}
+	\begin{lstlisting}
+[tag != "<V[:>].*"] [tag = "<Adj[:>].*"]? 
+[longtag = "<Det:indef>"]? [(longtag = "<N><acc>") | 
+(longtag = "<N><dat>" | longtag = "<N><abl>") | longtag = "<N><ins>" 
+| longtag = "<N><loc>"] [longtag = "<Cnj:coo>"] [tag = "<Adj[:>].*"]? 
+[longtag = "<Det:indef>"]? [longtag = "<N><gen>"] 
+[tag != "<N[:>].*" & tag != "<Postp[:>].*"]
+	\end{lstlisting}
+	\caption{NP($\neg$gen) \& NP(gen) Query}
+	\label{CQl_npgen}
+\end{figure}
+
+\begin{figure}[!h]
+	\lstset{
+		escapeinside={(*@}{@*)},basicstyle=\footnotesize\ttfamily
+	}
+	\begin{lstlisting}
+[tag != "<V[:>].*"] [tag = "<Adj[:>].*"]? 
+[longtag = "<Det:indef>"]? [(longtag = "<N><acc>") | 
+(longtag = "<N><dat>" | longtag = "<N><abl>") | longtag = "<N><gen>" 
+| longtag = "<N><loc>"] [longtag = "<Cnj:coo>"] [tag = "<Adj[:>].*"]? 
+[longtag = "<Det:indef>"]? [longtag = "<N><ins>"] 
+[tag != "<N[:>].*" & tag != "<Postp[:>].*"]
+	\end{lstlisting}
+	\caption{NP($\neg$ins) \& NP(ins) Query}
+	\label{CQl_npins}
+\end{figure}
+
+\begin{figure}[H]
+	\lstset{
+		escapeinside={(*@}{@*)},basicstyle=\footnotesize\ttfamily
+	}
+	\begin{lstlisting}
+[tag != "<V[:>].*"] [tag = "<Adj[:>].*"]? 
+[longtag = "<Det:indef>"]? [(longtag = "<N><acc>") | 
+(longtag = "<N><dat>" | longtag = "<N><ins>") | longtag = "<N><gen>" 
+| longtag = "<N><loc>"] [longtag = "<Cnj:coo>"] [tag = "<Adj[:>].*"]? 
+[longtag = "<Det:indef>"]? [longtag = "<N><abl>"] 
+[tag != "<N[:>].*" & tag != "<Postp[:>].*"]
+	\end{lstlisting}
+	\caption{NP($\neg$abl) \& NP(abl) Query}
+	\label{CQl_npabl}
+\end{figure}
+
+\begin{figure}[H]
+	\lstset{
+		escapeinside={(*@}{@*)},basicstyle=\footnotesize\ttfamily
+	}
+	\begin{lstlisting}
+[tag != "<V[:>].*"] [tag = "<Adj[:>].*"]? 
+[longtag = "<Det:indef>"]? [(longtag = "<N><acc>") | 
+(longtag = "<N><dat>" | longtag = "<N><ins>") | longtag = "<N><gen>" 
+| longtag = "<N><abl>"] [longtag = "<Cnj:coo>"] [tag = "<Adj[:>].*"]? 
+[longtag = "<Det:indef>"]? [longtag = "<N><loc>"] 
+[tag != "<N[:>].*" & tag != "<Postp[:>].*"]
+	\end{lstlisting}
+	\caption{NP($\neg$loc) \& NP(loc) Query}
+	\label{CQl_nploc}
+\end{figure}
+
+\section{Valency dictionary} \label{app:valency}
+\subsection{Treebanks}
+
+In order to construct the small-scale valency dictionary of Turkish verbs, 5 prominent Turkish dependency treebanks, which are listed in Table \ref{treebanks_table}, have been automatically parsed with a script written in Python (\textit{version} 3.8.12). 
+
+\begin{table}[!h]
+	\centering
+	\scalebox{0.93}{
+		\begin{tabular}{crrcc}
+			\textbf{Treebank}                                                    & \textbf{Sentences} & \textbf{Tokens} & \textbf{Annotation} & \textbf{Document Type} \\ \hline \hline
+			\textit{\begin{tabular}[c]{@{}c@{}} TWT\footnote{\citealp{twt-treebank}} \end{tabular}} & 4,851              & 80,920          & Manual              & Web                    \\
+			\textit{The Grammarbook}\footnote{\citealp{grammarbook-treebank}}                                            & 2,803              & 16,516          & Semi-automatic & Textbook examples      \\
+			\textit{IMST-UD}\footnote{\citealp{sulubacak-etal-2016-universal}} & 5,635 & 56,423 & Semi-automatic & \begin{tabular}[c]{@{}c@{}}News reports,\\ novels\end{tabular} \\
+			\textit{BOUN}\footnote{\citealp{boun-treebank}}                                                                 & 9,761              & 121,214         & Manual              & Various                \\
+			\textit{Kenet UD}\footnote{\href{https://github.com/UniversalDependencies/UD_Turkish-Kenet}{Kenet-UD GitHub Repository}}                                                             & 18,700             & 178,700         & Manual              & Various                \\ \hline
+	\end{tabular} }
+	\caption{List of treebanks employed in the corpus study}
+	\label{treebanks_table}
+\end{table}
+
+\subsection{Procedure}
+A dedicated Python library named \textit{conllu} (\texttt{https://pypi.org/project/conllu/}) was employed to parse the treebanks encoded in CoNLL--U format. The written script in Python automatically constructed the dictionary entries in the following steps: 1) it extracted the main verb/predicate of a sentence; 2) it identified the dependents of the main verb that serve the role of object, oblique and open clausal complement (xcomp) in their relation to the verb; 3) it catalogued the morphosyntactic properties (case and category) of the identified dependents alongside their respective verbal governors.  
+
+Once the dictionary was constructed, each entry was semi-automatically evaluated. First, a Python script automatically eliminated verbal entries that imposed only one category and case requirement on its argument(s). Subsequently, the remaining entries were manually evaluated and CQL queries were designed for the promising verbs. Most of the designed queries resulted in no verified results. An example entry from the constructed dictionary can be seen in (\ref{valencyentry}), which is the entry for the Turkish verb \textit{bas} (to press/push). 
+
+
+\pex \label{valencyentry}
+\vspace{-2.1em}
+\begin{Verbatim}[xleftmargin=-.2in]
+	bas (V):
+	{
+		`ObjCat': {`NOUN'}, `ObjCase': {`Dat', `Acc'}, 
+		`OblCat': {`NOUN'}, 'OblCase': {`Dat', `Loc'}, 
+		`XCompCat': {`NOUN'}, `XCompCase': {`Dat'}
+	}
+\end{Verbatim}
+\xe
+
+According to (\ref{valencyentry}), \textit{bas} can take three kinds of arguments: \textsc{obj}(ect), \textsc{obl}(ique), and \textsc{xcomp}. While \textsc{obj} function is realised by a dative or an accusative noun, the \textsc{obl} element should either be a dative or a locative noun. \textsc{xcomp} argument, on the other hand, can only be a nominal element in the dative case. 
