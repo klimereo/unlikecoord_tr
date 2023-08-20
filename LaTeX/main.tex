@@ -1,0 +1,126 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{fourier}
+\usepackage{expex}
+\usepackage{pgfplots}
+\usepackage{hyphenat}
+\usepackage{tikz-qtree}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{avm}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{ragged2e}
+\usepackage{floatrow}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{spverbatim}
+\usepackage[toc,page]{appendix}
+\usepackage{soul}
+\usepackage[a4paper,width=140mm,top=25mm,bottom=25mm]{geometry}
+\usepackage{listings}
+\usepackage{footnote}
+\usepackage{multirow}
+\makesavenoteenv{tabular}
+\makesavenoteenv{table}
+
+
+%% Verbatim
+
+\newtheorem{VerbatimText}{}
+
+%% Table of contents depth
+\setcounter{tocdepth}{2}
+
+%% Fancy headers
+\fancyhead{}
+\fancyhead[L]{Coordination of Unlikes in Turkish}
+\fancyhead[R]{Chapter \thechapter }
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+
+% No links
+
+\hypersetup{hidelinks}
+
+% AVM Setup
+
+\avmfont{\small\sc}
+\avmsortfont{\small}
+
+
+% Citations
+
+\usepackage{natbib}
+
+
+\begin{document}
+	
+	% Abstracts %
+	
+	\input{chapters/titlepage.tex}
+	\pagestyle{empty}
+	\section*{Summary}
+	\input{abstracts/abstract_EN.tex}
+	\section*{Key words}
+	\input{abstracts/title&kws_EN.tex}
+	\newpage
+	\pagestyle{empty}
+	\section*{Streszczenie}
+	\input{abstracts/abstract_PL.tex}
+	\section*{Słowa kluczowe}
+	\input{abstracts/title&kws_PL.tex}
+	
+	% ToC %
+	
+	\tableofcontents
+	
+	% Body % 
+	
+	\pagestyle{fancy}
+	\chapter{Introduction} \label{ch:introduction}
+	\input{chapters/introduction-aimandpurpose.tex}
+	\input{chapters/introduction-methodology.tex}
+	\chapter{Corpus study} \label{ch:corpus_study}
+	\input{chapters/corpus-study-methodology.tex}
+	\input{chapters/corpus-study-findings.tex}
+	\chapter{Acceptability judgment task} \label{ch:acc_experiment}
+	\input{chapters/experiment-methodology.tex}
+	\input{chapters/experiment-results.tex}
+	\chapter{Formal analysis} \label{ch:formal_analysis}
+	\input{chapters/analyses-MTSvsGES.tex}
+	\input{chapters/analyses-lfg.tex}
+	\input{chapters/analyses-analyses.tex}
+	\chapter{Implementation} \label{ch:implementation}
+	\input{chapters/implementation.tex}
+	\chapter{Conclusion} \label{ch:conclusion}
+	\input{chapters/conclusion.tex}
+
+	% Bibliography %
+
+	\bibliographystyle{apalike}
+	\bibliography{library.bib}
+	
+	% Appendix %
+
+	\appendix
+	\clearpage
+	\chapter{Corpus study} \label{appx:corpus_study}
+	\input{appendices/appendixA.tex}
+	\chapter{Acceptability judgment task} \label{appx:acc_experiment}
+	\input{appendices/appendixB.tex}
+	\chapter{Implementation}\label{appx:implementation}
+	\input{appendices/appendixC.tex}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

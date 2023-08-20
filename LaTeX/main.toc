@@ -1,0 +1,130 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Background}{6}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}The law of the coordination of likes}{7}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Alternative accounts of unlike coordination}{8}{subsection.1.1.2}%
+\contentsline {subsubsection}{Sag et al. (1985)}{8}{section*.8}%
+\contentsline {subsubsection}{Bayer (1996)}{8}{section*.9}%
+\contentsline {subsubsection}{Peterson (2004)}{9}{section*.10}%
+\contentsline {subsubsection}{Patejuk (2015) and Dalrymple (2017)}{9}{section*.11}%
+\contentsline {subsubsection}{Przepiórkowski and Patejuk (2021)}{10}{section*.12}%
+\contentsline {subsubsection}{Przepiórkowski (2022)}{11}{section*.13}%
+\contentsline {section}{\numberline {1.2}Aim and scope of the thesis}{12}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Problems and deficits}{12}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Hypothesis statement and the overview of the thesis}{12}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Methodological approach}{14}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Corpus study}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Overview of the chapter}{15}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Methodology}{15}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}The web corpus: Turkish Web 2012}{15}{subsection.2.2.1}%
+\contentsline {subsubsection}{The query tool: Corpus Query Language}{16}{section*.14}%
+\contentsline {subsubsection}{Sampling}{17}{section*.15}%
+\contentsline {subsubsection}{Verification}{17}{section*.16}%
+\contentsline {subsection}{\numberline {2.2.2}Treebanks and valency dictionary}{17}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Turkish cases and suspended affixation}{18}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Turkish case system}{18}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Suspended affixation}{19}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Results}{20}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Coordination of unlike categories}{20}{subsection.2.4.1}%
+\contentsline {subsubsection}{PP \& NP}{21}{section*.17}%
+\contentsline {subsubsection}{PP \& AdvP}{22}{section*.18}%
+\contentsline {subsubsection}{PP \& AdjP}{23}{section*.19}%
+\contentsline {subsubsection}{NP \& AdjP}{24}{section*.20}%
+\contentsline {subsubsection}{NP \& AdvP}{24}{section*.21}%
+\contentsline {subsection}{\numberline {2.4.2}Coordination of unlike cases}{26}{subsection.2.4.2}%
+\contentsline {subsubsection}{Unfruitful conditions: [$\neg $NP\textsubscript {acc} \& NP\textsubscript {acc}], [$\neg $NP\textsubscript {dat} \& NP\textsubscript {dat}], [$\neg $NP\textsubscript {gen} \& NP\textsubscript {gen}]}{27}{section*.22}%
+\contentsline {subsubsection}{[$\neg $NP\textsubscript {ins} \& NP\textsubscript {ins}]}{27}{section*.23}%
+\contentsline {subsubsection}{[$\neg $NP\textsubscript {abl} \& NP\textsubscript {abl}]}{28}{section*.24}%
+\contentsline {subsubsection}{[$\neg $NP\textsubscript {loc} \& NP\textsubscript {loc}]}{29}{section*.25}%
+\contentsline {section}{\numberline {2.5}Discussion and conclusion}{30}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Acceptability judgment task}{32}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Overview of the chapter}{32}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Methodology}{32}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Experimental design}{32}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Materials}{33}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Survey structure and presentation}{36}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Participants}{37}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Participant elimination}{38}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Statistical tests}{39}{subsection.3.2.6}%
+\contentsline {section}{\numberline {3.3}Results}{40}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Fillers}{40}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Coordination of unlike categories}{40}{subsection.3.3.2}%
+\contentsline {subsubsection}{Descriptive statistics}{40}{section*.26}%
+\contentsline {subsubsection}{Inferential statistics}{42}{section*.27}%
+\contentsline {subsubsection}{Discussion}{46}{section*.28}%
+\contentsline {subsection}{\numberline {3.3.3}Coordination of unlike cases}{47}{subsection.3.3.3}%
+\contentsline {subsubsection}{Descriptive statistics}{47}{section*.29}%
+\contentsline {subsubsection}{Inferential Statistics}{47}{section*.30}%
+\contentsline {subsubsection}{Discussion}{49}{section*.31}%
+\contentsline {section}{\numberline {3.4}Conclusion}{49}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Formal analysis}{51}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Overview of the chapter}{51}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Frameworks of syntax}{51}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Lexical-Functional Grammar}{53}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Overview of LFG architecture}{53}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}LFG grammars}{54}{subsection.4.3.2}%
+\contentsline {subsubsection}{C-structure rules}{55}{section*.32}%
+\contentsline {subsubsection}{Lexical entries}{56}{section*.33}%
+\contentsline {subsubsection}{Full analysis}{57}{section*.34}%
+\contentsline {subsubsection}{Well-formedness conditions}{58}{section*.35}%
+\contentsline {subsection}{\numberline {4.3.3}Coordination in LFG}{59}{subsection.4.3.3}%
+\contentsline {subsubsection}{Sets and distributivity}{59}{section*.36}%
+\contentsline {subsubsection}{CAT predicate}{61}{section*.37}%
+\contentsline {section}{\numberline {4.4}Analysis of unlike coordination in Turkish}{61}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Evaluating possible solutions}{61}{subsection.4.4.1}%
+\contentsline {subsubsection}{CAT predicate}{61}{section*.38}%
+\contentsline {subsubsection}{Solution proposed by \citeauthor {prz:pat:21:oup} (\citeyear {pat:prz:12b,prz:pat:21:oup})}{63}{section*.39}%
+\contentsline {subsection}{\numberline {4.4.2}Analysis of distinct unlike coordination configurations}{65}{subsection.4.4.2}%
+\contentsline {subsubsection}{Predicative arguments}{65}{section*.40}%
+\contentsline {subsubsection}{Object arguments}{66}{section*.41}%
+\contentsline {subsubsection}{Oblique arguments}{66}{section*.42}%
+\contentsline {subsubsection}{Adjuncts}{67}{section*.43}%
+\contentsline {section}{\numberline {4.5}Example analysis}{69}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Coordination of unlike categories}{69}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Coordination of unlike cases}{71}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}Conclusion}{72}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Implementation}{73}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduction}{73}{section.5.1}%
+\contentsline {section}{\numberline {5.2}C-structure rules}{73}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Coordination of unlike adjuncts}{75}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Verbal adjuncts}{75}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Nominal adjuncts}{77}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Implementing the conservative solution}{79}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Off-path constraints}{79}{subsection.5.4.1}%
+\contentsline {subsubsection}{From distributive statements to off-path constraints}{80}{section*.44}%
+\contentsline {section}{\numberline {5.5}Coordination of unlike arguments}{81}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Predicative arguments}{81}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Object arguments}{82}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Oblique arguments}{83}{subsection.5.5.3}%
+\contentsline {section}{\numberline {5.6}Conclusion}{84}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Conclusion}{85}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Corpus study}{93}{appendix.A}%
+\contentsline {section}{\numberline {A.1}CQL queries}{93}{section.A.1}%
+\contentsline {subsection}{\numberline {A.1.1}Interpreting CQL queries}{93}{subsection.A.1.1}%
+\contentsline {subsection}{\numberline {A.1.2}Coordination of unlike categories}{94}{subsection.A.1.2}%
+\contentsline {subsubsection}{PP \& NP}{94}{section*.46}%
+\contentsline {subsubsection}{PP \& AdvP}{95}{section*.47}%
+\contentsline {subsubsection}{PP \& AdjP}{95}{section*.48}%
+\contentsline {subsubsection}{NP \& AdjP}{95}{section*.49}%
+\contentsline {subsubsection}{NP \& AdvP}{95}{section*.50}%
+\contentsline {subsection}{\numberline {A.1.3}Coordination of unlike cases}{96}{subsection.A.1.3}%
+\contentsline {section}{\numberline {A.2}Valency dictionary}{97}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Treebanks}{97}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Procedure}{97}{subsection.A.2.2}%
+\contentsline {chapter}{\numberline {B}Acceptability judgment task}{99}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Sub-surveys}{99}{section.B.1}%
+\contentsline {subsection}{\numberline {B.1.1}Category block}{99}{subsection.B.1.1}%
+\contentsline {subsection}{\numberline {B.1.2}Case block}{100}{subsection.B.1.2}%
+\contentsline {section}{\numberline {B.2}Instructions}{100}{section.B.2}%
+\contentsline {subsection}{\numberline {B.2.1}Turkish original}{100}{subsection.B.2.1}%
+\contentsline {subsection}{\numberline {B.2.2}English translation}{101}{subsection.B.2.2}%
+\contentsline {section}{\numberline {B.3}Glossed materials}{103}{section.B.3}%
+\contentsline {subsection}{\numberline {B.3.1}Coordination of unlike categories}{103}{subsection.B.3.1}%
+\contentsline {subsection}{\numberline {B.3.2}Coordination of unlike cases}{110}{subsection.B.3.2}%
+\contentsline {chapter}{\numberline {C}Implementation}{118}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Grammar}{118}{section.C.1}%
+\contentsline {subsection}{\numberline {C.1.1}Preamble}{118}{subsection.C.1.1}%
+\contentsline {subsection}{\numberline {C.1.2}C-structure rules}{118}{subsection.C.1.2}%
+\contentsline {subsection}{\numberline {C.1.3}Templates}{120}{subsection.C.1.3}%
+\contentsline {subsection}{\numberline {C.1.4}Lexicon}{120}{subsection.C.1.4}%
+\contentsline {section}{\numberline {C.2}Test sentences}{125}{section.C.2}%
