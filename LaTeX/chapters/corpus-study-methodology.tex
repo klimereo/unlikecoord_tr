@@ -1,0 +1,106 @@
+\section{Overview of the chapter}
+
+The corpus study primarily plays an exploratory role in the thesis, contributing to both the formulation and evaluation of the hypothesis. 
+
+The methodology employed in the corpus study is elucidated in \S \ref{sec:corpmethodology}. \S \ref{sec:turkishcasesandsa} offers a concise introduction to the Turkish case system and Turkish suspended affixation. The study's findings are presented in \S \ref{sec:corpusresults}. Lastly, \S \ref{sec:corp disc and concl} provides a brief discussion, evaluating the results within the context of the hypothesis put forward in the thesis.
+
+\section{Methodology} \label{sec:corpmethodology}
+
+In the investigation of syntactic phenomena, using raw text corpora is essentially futile, as the focus is not on the surface forms of individual tokens but rather in the abstract structures underlying them. In this regard, to carry out corpus-oriented investigations of syntactic phenomena, linguists often turn to two types of annotated corpora: part-of-speech (POS) tagged corpora and treebanks. 
+
+Part-of-speech (POS) tagged corpora are annotated with the morphosyntactic features of each lexical item, either through automated or manual methods. This allows linguists to move beyond surface forms and focus on the syntactic relations between lexical items. On the other hand, treebanks contain syntactically parsed sentences, typically following either phrase-structure or dependency structure. Treebanks provide a more detailed and precise analysis, but are often smaller in size compared to POS-tagged corpora. As a result, when investigating rare phenomena, it may be necessary to supplement a treebank analysis with POS-tagged corpora. Overall, the combination of POS-tagged corpora and treebanks provides linguists with powerful tools for conducting corpus-oriented investigations of syntactic phenomena. For that reason, the corpus study utilizes both types of syntactically annotated corpora.
+
+\subsection{The web corpus: Turkish Web 2012} 
+
+The POS-tagged corpus utilized in the study, Turkish Web 2012 (trTenTen; \citealp{vit2012}), is a large web corpus consisting of 3.3 billion automatically extracted and annotated  tokens \citep{tekintrmorph}. Automatically constructed and annotated corpora often suffer from low reliability and present several challenges to linguists. The process of automatic extraction can lead to the inclusion of texts from questionable sources, potentially even machine-generated content. Moreover, the automatic annotator might produce numerous inaccurate annotations, further complicating the utility of the corpus. Nevertheless, Turkish Web 2012 remains the only POS-tagged corpus used throughout the investigation as the best alternatives, such as Turkish National Corpus (TNC; \citealp{aksan-etal-2012-construction}) and TS Corpus \citep{Sezer2017}, are either drastically smaller or not compatible with complex syntactic queries.
+
+\subsubsection{The query tool: Corpus Query Language}
+
+Queries formulated in Corpus Query Language (CQL) were the main tools in the exploration of the corpus. CQL queries enable the linguist to combine lexico-syntactic information with logical operators in a relatively straightforward fashion. This renders CQL queries powerful tools for searching specific syntactic constructions in large annotated corpora. 
+
+Within the context of the present investigation, various CQL queries targeting unlike category and case coordination have been constructed. These rather general CQL statements, however, had to be constantly revised due to the systematic annotation mistakes found in the corpus. As a consequence, some of the constructed CQL queries attempted to target coordinate structures controlled by specific verbs, which were speculated to allow arguments of different categories/cases. Such speculations were based on the cross-linguistic data from previous works on unlike coordination and the constructed valency dictionary, which is the topic of the subsequent section. Ultimately, the instances of unlike coordination were investigated solely based on 15 distinct CQL queries, which were determined, through experimentation, to be useful and sufficiently comprehensive. While 9 queries were designed to investigate distinct unlike category coordination configurations, the remaining 6 queries explored different unlike case coordination possibilities.\footnote{Refer to Appendix \ref{app:cqlqueries} for the queries.}
+
+\begin{sloppypar}
+The example in Figure \ref{CQl_sur} illustrates one of the shortest queries among the 15 CQL queries.  When we look at the first line of the query, the section after \mbox{\texttt{[tag != `<V>']}} specifies in three separate query blocks that we are looking for a sequence where a noun is optionally (specified by the ``?'' sign after the blocks) preceded by an indefinite determiner\footnote{The query does not leave the determiner requirement underspecified on purpose. The only determiner that can be used in that position is the indefinite article as Turkish lacks a definite article and the use of demonstratives complicates the anatomy of an NP.} or an adjective, or both. This part collectively encodes the anatomy of a simple and most common type of Turkish noun phrase. The \mbox{\texttt{[tag != `<V>']}} block preceding the Turkish NP section indicates that the token immediately preceding an NP must not bear a verbal tag. This block ensures that we do not have a sentential first conjunct where the NP is the argument of the preceding verb. The second line specifies that the NP must be followed by a coordinating conjunction, while the third line forces the second conjunct to be an adjective phrase immediately followed by a verb whose stem is \textit{ol} `be/become'. In conclusion, the query in Figure \ref{CQl_sur} specifically targets an NP \& AdjP coordination that is governed by the verb \textit{ol} `be/become'. \end{sloppypar}
+
+\begin{figure}[!h]
+\begin{small}
+\begin{spverbatim}
+	[tag !=`<V>'][tag =`<Adj>']?[tag =`<Det:indef>']?[tag =`<N>'] 
+	[tag =`<Cnj:coo>']
+	[tag =`<Adv>']? [tag =`<Adj>'] [stem =`ol' & tag =`<V>']
+\end{spverbatim}
+\end{small}
+    \caption{`NP \& AdjP \textsc{be/become}' Query}
+	\label{CQl_sur}
+\end{figure}
+
+
+\subsubsection{Sampling}
+While the number of sentences returned by a few queries was smaller than 300, most of the queries returned thousands of sentences. Due to the widespread annotation mistakes observed in the corpus, formulating highly specific queries was not preferred, as such queries were observed during the query design process to miss occurrences of unlike coordination. Instead, the study sampled a specified number of sentences from the queries that returned more than 500 sentences. Subsequently, each sample was manually checked to see whether the sampled sentence contained genuine unlike coordination.  
+
+\subsubsection{Verification}
+
+During the manual verification process, the sentences that were irrelevant due to annotation mistakes were not taken into account. The validity of promising occurrences, however, was subject to the following criteria: 1) unlike coordination instances that were deemed to be outright ungrammatical (as determined by the author of the thesis, who is a native speaker of Turkish) were considered invalid; 2) unlike coordination instances that resolve to like coordination due to the process of suspended affixation were considered invalid; 3) unlike coordination instances that incorporated fixed and/or idiomatic expressions were considered invalid. If an evaluated instance passed all these criteria, then it was recorded as a genuine case of unlike coordination.
+
+\subsection{Treebanks and valency dictionary}
+
+When formulating verb-oriented queries, valency dictionaries might offer great assistance, especially in the case of unlike case coordination. This is because valency dictionaries provide a highly comprehensive list of lexical items and their combinatorial possibilities with other items, expressed in terms of morphosyntactic and syntactico-semantic relations. For example, a valency dictionary not only indicates how many arguments a verb requires but also lists the specific morphosyntactic and syntactico-semantic properties of those arguments. In the context of the present study, if a valency dictionary indicates, for instance, that the direct object of a verb can be realized by different syntactic categories or nominals in different cases, we can expect to observe instances of unlike direct objects being coordinated within the context of this verb. 
+
+Unfortunately, at the time of writing, there is no Turkish valency dictionary that can be employed for such purposes. As a solution, a small-scale ``valency'' dictionary of Turkish verbs was constructed by automatically parsing 5 prominent Turkish dependency treebanks.\footnote{See Appendix \ref{app:valency} for more details about the construction procedure.} The resulting dictionary was used in combination with previous Polish and English findings from the literature to guide the query design process. It is important to note here, however, that the constructed valency dictionary is neither fully accurate nor sufficiently comprehensive simply due to the small size of the treebanks. Thus, the valency dictionary played solely an informative role in the present study, providing clues as to where to look for unlike coordination in the POS-tagged corpus.
+
+\section{Turkish cases and suspended affixation} \label{sec:turkishcasesandsa}
+
+To gain a better understanding of the investigation's findings, it is essential to provide a brief overview of two aspects of the Turkish language: its case system and the phenomenon of suspended affixation. The Turkish case system is a crucial element of its grammar, and understanding it is vital for analyzing the coordination of nominal constituents with different grammatical cases. Additionally, suspended affixation is a prevalent phenomenon in Turkish that impinges on coordination.
+
+\subsection{Turkish case system} \label{sec:turkishcasesys}
+
+Currently, there does not seem to be a clear consensus in the literature as to how many cases there are in Turkish. This disagreement specifically stems from the dubious morphosyntactic status of the bound morpheme \textit{-(y)lA}, which is either classified as the cliticized version of the postposition \textit{ile} \citep{lewis1967, kornfilt97}, or an instrumental/comitative case marker \citep[p.\ 54]{asli_kerslake_2010}. Regrettably, no empirical work has yet been done to determine the exact morphosyntactic status of this form and its relation to the Turkish case system. For this reason, the present work conforms to the most recent treatment of this problem by \citet{asli_kerslake_2010} and acknowledges an instrumental/comitative case realized by \textit{-(y)lA}. Additionally, the automatic POS-tagger employed in Turkish Web 2012 \citep{tekintrmorph} also tags this bound morpheme as a marker of instrumental/comitative case suffix. Nevertheless, since there is no empirical work confirming the existence of an instrumental/comitative case, it is possible that all NPs labeled as instrumental/comitative in this study could alternatively be classified as PPs headed by \textit{ile}. In the latter scenario, the examples of unlike case coordination incorporating instrumental NPs would be reinterpreted as instances of unlike category coordination.
+
+Hence, the present work recognizes 7 grammatical cases in Turkish. With the exception of the nominative/absolutive case, each case is realized by an overt case suffix, as illustrated in Figure \ref{tr_case_suffix}. It is important to note here that the suffixes undergo morphophonological transformation (Turkish vowel harmony) as governed by the base they attach to.
+
+\begin{figure}[!h]
+\centering
+\begin{tabular}{lllll}
+		Nominative/Absolutive & & & & -$\varnothing$ \\
+		Accusative 			& & & & -(y)I    \\
+		Dative     			& & & & -(y)A    \\
+		Genitive   			& & & & -(n)In   \\
+		Instrumental		& & & & -(y)lA   \\
+		Locative   			& & & & -DA      \\
+		Ablative   			& & & & -DAn 	 \\
+ 
+	\end{tabular}
+\caption{Turkish case suffixes}
+\label{tr_case_suffix}
+\end{figure}
+
+The syntactic functions of noun phrases in Turkish are almost exclusively determined by the case suffix that they bear \citep[p.\ 212]{kornfilt97}, rather than their phrase-structural positions. Each Turkish case is commonly associated with a particular syntactic function, i.e., a given syntactic function is predominantly realized by one particular grammatical case. 
+
+Nominative/absolutive case is primarily used for the subjects of finite, matrix clauses and for non-specific objects (i.e., differential object marking).\footnote{It is worth noting that a non-specific object in the nominative case should immediately precede its verb. If the non-specific object is separated from its verb, the accusative marking on the object is obligatory.} Accusative case is strictly used for direct objects, including the derived direct objects of causative constructions. Dative case is used for indirect objects and oblique arguments of certain verbs. In addition to being used to mark the possessor of possessive noun phrase, genitive case is used to mark the subjects of nominalized subordinate clauses. The remaining cases, instrumental, locative, and ablative, are typically used to mark various types of adjuncts, such as adjuncts of instrument, manner, location, source, and goal. However, certain verbs, such as \textit{vazgeç-} `renounce/to give up' and \textit{karar kıl-} `decide on', exclusively take ablative and locative arguments, respectively.
+
+\subsection{Suspended affixation} 
+
+A pervasive morphosyntactic phenomenon in Turkish, suspended affixation (SA) occurs when an affix (or affixes) marked on one of the edgemost conjuncts takes phrasal scope over the coordinate structure. In Turkish, SA is strictly limited to the affixes marked on the rightmost conjunct. Exactly what types of suffixes can take part in SA, however, is still a debated topic in the literature. Although \citet{Kabak+2007} and \citet{kornfilt+2012} claim that only inflectional suffixes are available for suspension, recent work by \citet{akkus2016} and \citet{sensekerci_22} questions this claim on the basis of attested corpus examples of suspended affixation incorporating derivational suffixes. Based on available research, it is reasonable to infer that Turkish SA allows for all nominal inflections (i.e., number, possession, and case) as well as certain derivational suffixes to be suspended. A classical example of suspended affixation can be seen in (\ref{Turkish-SA}) where multiple nominal inflections are subject to suspension at the same time.
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{Turkish-SA} \begingl
+\gla Tebrik ve teşekkür-\textbf{ler-im-i} sun-uyor-um. //
+\glb Congratulation and thank-\textsc{pl}-\textsc{1sg.poss}-\textsc{acc} offer-\textsc{pres.prog}-\textsc{1sg} //
+\glft `(I) am offering my congratulations and thanks.' \trailingcitation{\citep[p.\ 40]{lewis1967}}//
+\endgl
+\xe
+
+SA is crucial to consider when investigating instances of unlike case coordination in Turkish, as failure to take SA into account may lead to erroneous conclusions. For instance, the coordination in (\ref{Turkish-SA}) looks like an instance of unlike case coordination on the surface. The first conjunct, \textit{tebrik} `congratulation', bears no case suffix (i.e., it seems to bear the nominative/absolutive case) while the second conjunct, \textit{teşekkürlerimi} `my thanks', is marked with the accusative case suffix. This particular coordinate structure, however, can only be classified as a coordination of like cased conjuncts since the first conjunct, being a bare noun that carries no inflections, automatically assumes all the nominal features of the rightmost conjunct due to the mechanism of Turkish SA. Here, however, one may argue that this example may be ambiguous between like and unlike case coordination depending on the activation of SA. This argument, however, can be invalidated when we explicitly disable SA by switching the order of the conjuncts. The resulting structure would have the nominative conjunct as its second and the accusative conjunct as its first conjunct. If the nominative and accusative cased conjuncts can be coordinated without any problem, this altered structure should be grammatical as well since the order of the conjuncts should not matter. However, this altered construction, presented in (\ref{Turkish-SA1}), is ungrammatical, thus confirming that an underlying unlike case coordination is not possible.
+
+\pex[* = *, glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{Turkish-SA1} \begingl
+\gla \ljudge{*}Teşekkür-ler-im-i ve tebrik sun-uyor-um. //
+\glb  { }thank-\textsc{pl}-\textsc{1sg.poss}-\textsc{acc} and congratulation offer-\textsc{pres.prog}-\textsc{1sg} //
+\glft { }Intended reading: `(I) am offering my thanks and congratulation.' //
+\endgl
+\xe
+
+\begin{sloppypar}
+For this reason, the present study does not classify coordinate structures that incorporate SA as unlike case coordination. Specifically, the coordinate structures where the rightmost conjunct has a case suffix and the preceding conjunct(s) are case-unmarked are treated as like case coordination. Likewise, coordinate structures where the final conjunct is case-unmarked and the preceding conjunct(s) are explicitly case marked are not considered a valid configuration to investigate in the corpus study as they are uncontroversially ungrammatical.\footnote{Moreover, a quick investigation of this configuration in corpus revealed no valid results.}
+\end{sloppypar}

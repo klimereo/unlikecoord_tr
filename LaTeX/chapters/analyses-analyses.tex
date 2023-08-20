@@ -1,0 +1,475 @@
+\section{Analysis of unlike coordination in Turkish} \label{sec:lfganalysis}
+
+Before proposing a formal analysis that captures empirical facts obtained from corpus and acceptability judgment studies, let us outline some desiderata for the analysis, which are crucial to ensure both theoretical parsimony and broad applicability.
+
+Firstly, to ensure theoretical simplicity and broad applicability, the analysis should avoid introducing coordination mechanisms or overarching grammar parameters specific to Turkish. Instead, basic coordination facts observed in Turkish should naturally fall out from more fundamental constraints pertaining to the morphosyntactic relation between Turkish predicates and their arguments. In other words, the focus should be on developing accurate predicate constraints that can be evaluated for each conjunct in a coordination.
+
+Secondly, the proposed analysis should avoid introducing significant extensions to the existing LFG architecture. In this way, it can be ensured that the analysis remains compatible with XLE \citep[Xerox Linguistic Environment;][]{xle}, which is a computational platform for implementing LFG grammars.
+
+\subsection{Evaluating possible solutions}
+\subsubsection{CAT predicate}
+
+Modeling unlike category coordination through the mechanism of CAT predicate was pursued in \citet{Dalrymple2017}. Under her analysis, syntactic category labels are replaced with feature matrices. For example, instead of using simple categories, like N or NP, Dalrymple's approach represents them as complex feature matrices, such as [\textsc{n} +, \textsc{v} --, \textsc{p} --, \textsc{adj} --, \textsc{adv} --].
+
+In the context of coordination, the feature matrix associated with the coordination node aggregates via a specific coordination rule the categorical information of each conjunct. For instance, the coordinate structure incorporating a noun and an adjective would bear the feature matrix [\textsc{n} +, \textsc{adj} +]. 
+
+Categorical constraints imposed by the predicates are also expressed using these feature matrices. When a predicate constrains the category of its arguments, it indicates via the CAT predicate the categories that are not allowed, leaving room for the co-occurrence of permitted categories. For instance, the predicative argument of the Turkish verb \textit{ol-} `be/become', can be realized by an NP, AdjP, PP or their coordination. This categorical constraint would be encoded under Dalrymple's analysis as in (\ref{dalrymple.become}).\footnote{\%\textsc{c} acts as a placeholder name (as indicated by the \% sign) for the f-structure that is the value of the \textsc{predlink} attribute.} 
+
+\pex
+\label{dalrymple.become}
+CAT(($\uparrow$ \textsc{predlink}), \%\textsc{c})\\
+(\%\textsc{c} \textsc{v}) = -- \\ 
+(\%\textsc{c} \textsc{adv}) = -- 
+\xe
+
+Dalrymple's CAT predicate analysis coupled with complex feature matrices offers an elegant analysis of unlike category coordination. However, its coverage is far from comprehensive, as pointed out by \citet{prz:pat:21:oup}, who argue that predicates not only impose general categorical constraints on their arguments but also intricate morphosyntactic requirements.
+
+To illustrate this point, consider the Turkish sentences in (\ref{PPNP-konus}) and (\ref{PPNP-konus2}). In (\ref{PPNP-konus}), both examples involve a coordinate structure consisting of a PP and an NP that serves as the object argument of the verb \textit{konuş-} `talk/converse'. However, not all NPs or PPs can occupy the object argument position of this verb. Specifically, the head of the PP must be either the postposition \textit{hakkında} 'about', as seen in (\ref{PPNP-1}--b), or \textit{üzerine} 'upon/over', as demonstrated in (\ref{PPNP-konus2}). Additionally, the object NP argument must be in either the nominative case, as seen in (\ref{PPNP-1}) (indicating non-specificity), or the accusative case, as observed in (\ref{PPNP-2}) (indicating specificity).
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{PPNP-konus} 
+\a\label{PPNP-1} \begingl
+\gla Kolektör-ler sık sık {[} antik enstrüman-lar {hakkında ]\textsubscript{PP}} veya {[} ticari {bilgi ]\textsubscript{NP\textit{nom}}} konuş-ur-lar. //
+\glb collector-\textsc{pl}  frequent frequent antique instrument-\textsc{pl} about or commercial information talk-\textsc{aor}-\textsc{3pl}//
+\glft `Collectors frequently talk about antique instruments or about commercial information.' \trailingcitation{(trTenTen)}//
+\endgl
+\a\label{PPNP-2} \begingl
+\gla Kendi-si ile {[} Sofya baş müftü yardımcısı Necati Ali {hakkında ]\textsubscript{PP}} ve {[} yap-tık-ları {hizmet-ler-i]\textsubscript{NP\textit{acc}}} konuş-tu-k. //
+\glb self-\textsc{3p} with Sofia chief mufti deputy Necati Ali about and do-\textsc{ptcp}-\textsc{3pl.poss} service-\textsc{pl}-\textsc{acc} talk-\textsc{pst}-\textsc{1pl} //
+\glft `We talked about Necati Ali, the deputy chief mufti of Sofia, and the services they provide.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{PPNP-konus2} 
+\begingl
+\gla Sayın Babacan ile Ortadoğu-da-ki son gelişme-ler üzerine konuş-tu-k. //
+\glb honourable Babacan with {Middle East}-\textsc{loc}-\textsc{adjz} last development-\textsc{pl} over talk-\textsc{pst}-\textsc{1pl} //
+\glft `With honourable Babacan, we talked about the latest developments in the Middle East.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe
+
+\citet{prz:pat:21:oup} (henceforth abbreviated as P\&P) provide further examples from Polish and English that illustrate similarly complex morphosyntactic constraints and subsequently consider a potential amendment to Dalrymple's account in terms of complex categories. This solution involves representing various morphosyntactic properties, such as case and the form of the postposition, in the syntactic category labels. For instance, this solution would necessitate encoding the category of \textit{hakkında} not as a simple P but as a complex category P[\textit{hakkında}]. Similarly, we would need to encode the grammatical case of an NP in terms of complex categories. Since practically all Turkish grammatical cases are found in unlike coordination configurations, this would require 7 distinct nominal categories in the form of NP[$x$], where $x$ stands for a Turkish case.
+
+However, as P\&P observe, this solution presents challenges. First, it contradicts one of the fundamental assumptions of LFG, which advocates representing universal and abstract grammatical features, like \textsc{case}, at the level of f-structure. Introducing numerous complex c-structure categories where such information is represented in category labels renders the f-structure redundant. Second, even if complex categories were adopted, they would not guarantee comprehensive coverage. P\&P support this argument with Polish examples illustrating how the assignment of case to a nominal can change depending on the presence of negation, further complicating the complex category and CAT predicate analysis.
+
+
+\subsubsection{Solution proposed by \citeauthor{prz:pat:21:oup} (\citeyear{pat:prz:12b,prz:pat:21:oup})}
+
+To address the complications arising from the CAT predicate solution, P\&P offer a robust solution.\footnote{The foundations of this solution were laid in their earlier work: \citet{prz:pat:12a}. The present work, however, refers to their more recent paper as the present analysis draws upon that version.} They propose representing syntactic categories exclusively as values of a distributive \textsc{cat} attribute in the f-structure.
+  
+In their work, P\&P present two conceptually equivalent solutions. The first solution, known as the `liberal' solution, makes use of local names and constraining equations. While the `liberal' solution slightly extends the default assumptions of LFG, it succinctly captures the underlying mechanism involved. The second solution, referred to as the `conservative' solution, involves using a specific LFG device called off-path constraints. The 'conservative' solution remains fully compatible with the default assumptions of LFG, making it a desirable option for computational implementation. For the purposes of this work, the `liberal' solution is utilized in the current chapter due to its conceptual clarity and intuitiveness. However, in the subsequent chapter on implementation, the `conservative' solution is adopted as the implementation method.
+
+To illustrate their analysis within the context of the `liberal' solution, let us consider the examples in (\ref{believein}).
+
+\pex
+\label{believein}
+\a We all believe [in positive energy]\textsubscript{PP[\textit{in}]} and [that what you give comes back]\textsubscript{CP[\textit{that}]}.
+\a We also believe [that you learn from your mistakes]\textsubscript{CP[\textit{that}]} and [in second chances]\textsubscript{PP[\textit{in}]}. \trailingcitation{\citep[][p.\ 210, ex.\ (11) and (12)]{prz:pat:21:oup}}
+\xe
+
+These examples demonstrate that the \textsc{obl} (oblique) argument of the verb \textit{believe} can manifest as a CP headed by the complementizer \textit{that}, or a PP with the preposition \textit{in}. This conclusion is supported by the fact that replacing the complementizer \textit{that} with \textit{if}, or substituting the preposition \textit{in} with \textit{at}, leads to ungrammaticality. In light of these observations, P\&P propose the following statement that captures the constraints imposed by \textit{believe} on its \textsc{obl} argument(s):
+
+\ex
+\label{przpat:statement}
+($\uparrow$ \textsc{obl}) = \%\textsc{c} $\land$ \\
+\vspace{3pt}\text{[[}(\%\textsc{c cat}) =$_c$ V $\land$ (\%\textsc{c comp-form}) =$_c$ \textsc{that}] $\lor$ \\
+\text{[}(\%\textsc{c cat}) =$_c$ P $\land$ (\%\textsc{c pform}) =$_c$ \textsc{in}\text{]]}
+\xe
+
+The constraining statement starts by assigning a local name, \%\textsc{c}, to the f-structure value of the \textsc{obl} attribute. This allows us to refer to this specific f-structure using the name \%\textsc{c} throughout the statement. To be considered a valid f-structure, \%\textsc{c} must satisfy one of the conditions presented in the second and third lines, as indicated by the disjunction symbol, $\lor$.
+
+The first condition, encoded in the second line, states that \%\textsc{c} must contain two specific attribute-value pairs simultaneously, as indicated by the conjunction symbol, $\land$. These pairs are \textsc{cat} attribute with the value ``V'' (indicating verbal category) and \textsc{comp-form} attribute with the value ``that'' (indicating the presence of the complementizer \textit{that}). The second condition, on the other hand, mandates that \%\textsc{c} must have two particular attribute-value pairs together. These are \textsc{cat} attribute with the value ``P'' (indicating prepositional category) and \textsc{pform} with the value ``in'' (signifying the preposition \textit{in}). 
+
+In simpler terms, the constraining statement states that the \textsc{obl} argument of the verb \textit{believe} can take one of two forms: either a CP projected by \textit{that} or a PP projected by \textit{in}. Below are the visual representations of the two possible f-structures.
+
+\noindent
+\begin{minipage}{0.5\textwidth}
+\pex
+First condition:\\
+\begin{avm}
+	\[ pred & `believe$\langle$subj, obl$\rangle$' \\ 
+	obl & \[cat & V \\
+			comp-form & \textsc{that} \\
+	. . . \] \\
+	. . .	\]
+\end{avm}
+\xe
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+\pex
+Second condition:\\
+\begin{avm}
+	\[ pred & `believe$\langle$subj, obl$\rangle$' \\ 
+	obl & \[cat & P \\
+			pform & \textsc{in} \\
+	. . . \] \\
+	. . . \]
+\end{avm}
+\xe
+\end{minipage}
+
+However, the intended functionality of the statement encounters a challenge when dealing with coordinated oblique arguments (i.e., when \%\textsc{c} corresponds to a hybrid object). In standard LFG assumptions, the statement is evaluated once for the entire coordinate structure, not for each individual conjunct as intended. Consequently, the coordinated oblique arguments are required to be either all CP[\textit{that}] or all PP[\textit{in}], rather than allowing a mix of the two categories.
+
+To address this issue, P\&P expand the notion of distributivity to encompass statements. This revised definition implies that not only features like \textsc{cat} or \textsc{case} can distribute to conjuncts, but also statements such as the one shown in (\ref{przpat:statement}). 
+
+Furthermore, P\&P's solution also effectively eliminates the troublesome issue of assigning a syntactic category label to the node dominating the conjuncts. In the analysis proposed by \citeauthor{Dalrymple2017}, the mother coordination node collects in the form of a feature matrix the category of all its daughters. Alternatively, \citeauthor{peterson2004}'s (\citeyear{peterson2004}) account assigns the category of the first conjunct to the entire coordination. P\&P's proposal, however, adopts a drastically different approach. Under their analysis, the hybrid object corresponding to coordination does not possess a syntactic category label itself; instead, individual conjuncts are assigned their respective syntactic categories.
+
+This solution is attractive in that it allows both categorical and other morphosyntactic constraints to be unified within a single statement, representing a conceptually superior approach compared to the use of the CAT predicate. Moreover, within vanilla LFG, syntactic categories and bar levels of nodes are actually represented in a separate level called l-structure, which projects from c-structure nodes, much like f-structure \citep[][p.\ 16]{Lowe_Lovestrand_2020}. Therefore, P\&P's proposal essentially transfers the \textsc{cat} attribute from l-structure to f-structure.\footnote{The question as to whether bar levels should also be relocated to the f-structure goes beyond the scope of this thesis. However, such a modification would have significant implications for the overall architecture of LFG.} Thus, the present thesis adopts the solution proposed by P\&P to analyze Turkish unlike coordination facts.
+
+\subsection{Analysis of distinct unlike coordination configurations}
+
+\subsubsection{Predicative arguments}
+
+In the case of coordination of unlike arguments, the most common type observed in the corpus was predicative argument coordination. These predicative arguments specifically occur in relation to the verb \textit{ol-} `be/become' and can occur as PPs, NPs, and AdjPs.
+
+When it comes to PP predicates, virtually any Turkish postposition can be used to project the PP in the predicative position. Some verified examples of these postpositional heads include \textit{yönelik} `towards', \textit{ile} `with', \textit{kadar} `until', \textit{birlikte} `together', \textit{karşı} `against', \textit{göre} `according to', \textit{için} `for', \textit{gibi} `like', \textit{dolayı} `due to'. Accordingly, we can assume that the verb, \textit{ol-}, leaves \textsc{pform} attribute of its \textsc{predlink} argument (predicative argument) underspecified. Similarly, there appears to be no morphosyntactic constraint on predicative AdjPs.
+
+In contrast, when it comes to NPs, the verb \textit{ol-} specifies that its NP argument can bear any case except accusative or dative. This is because nominals marked with accusative and dative cases are consistently assigned to the functions of \textsc{obj} and \textsc{obl}, respectively, and not the predicative function, \textsc{predlink}. The absence of corpus examples featuring accusative or dative nominals in the predicative position further supports this constraint.
+
+The distinct morphosyntactic constraints imposed by \textit{ol-} on its predicative arguments can be effectively encoded using the disjunctive statement presented in (\ref{ol:statement}). 
+
+\ex
+\label{ol:statement}
+($\uparrow$ \textsc{predlink}) = \%\textsc{c} $\land$ \\
+\vspace{3pt}\text{[[}(\%\textsc{c cat}) =$_c$ N $\land$ $\neg$\text{[}(\%\textsc{c case}) =$_c$ \textsc{acc} $\lor$ (\%\textsc{c case}) =$_c$ \textsc{dat}\text{]]} $\lor$ \\
+(\%\textsc{c cat})  =$_c$ P $\lor$ \\
+(\%\textsc{c cat})  =$_c$ Adj\text{]]}
+\xe
+
+Importantly, since the definition of distributivity is extended to statements under the present analysis, these disjuncts are evaluated for individual conjuncts if the value of the oblique is a hybrid object. As a result, the coordination of predicative arguments is well-formed if each conjunct individually satisfies exactly one of the disjuncts in the statement.
+
+\subsubsection{Object arguments}
+
+The coordination of unlike objects was observed specifically within the context of the verb \textit{konuş-} `talk/converse', which subcategorizes for PP and NP objects. As mentioned earlier, the constraints imposed by \textit{konuş-} on its \textsc{obj} are not limited to syntactic categories alone. The PP argument must be introduced by the postpositions \textit{hakkında} `about' or \textit{üzerine} `over/upon'. Likewise, the case of the nominal argument is restricted to accusative and nominative cases. These requirements imposed by \textit{konuş-} can be represented in the following disjunctive statement:
+
+\ex
+\label{konus:statement}
+($\uparrow$ \textsc{obj}) = \%\textsc{c} $\land$ \\
+\vspace{3pt}\text{[[}(\%\textsc{c cat}) =$_c$ P $\land$ \text{[}(\%\textsc{c pform}) =$_c$ \textsc{hakkinda} $\lor$ (\%\textsc{c pform}) =$_c$ \textsc{üzerine}\text{]]} $\lor$ \\
+\text{[}(\%\textsc{c cat}) =$_c$ N $\land$ \text{[}(\%\textsc{c case}) =$_c$ \textsc{acc} $\lor$ (\%\textsc{c case}) =$_c$ \textsc{nom}\text{]]]}
+\xe
+
+
+\subsubsection{Oblique arguments}
+
+\begin{sloppypar}
+In the acceptability judgment study, unlike oblique arguments were tested within the context of two verbs: \textit{sür-} `last/continue' and \textit{saydır-} `curse (someone)'. However, there was a notable difference in the participants' responses to the sentences. The sentence testing \textit{saydır-} received somewhat unfavorable scores \mbox{(\textit{M} = --0.18, \textit{SD} = 2.31)}, whereas the sentence testing \textit{sür-} was more positively received (\textit{M} = 1.72, \textit{SD} = 1.55). Despite this, the average score for the \textit{saydır-} sentence is not low as the average score for ungrammatical fillers (\textit{M} = --1.99, \textit{SD} = 1.41), suggesting that \textit{saydır-} might be a verb capable of taking objects with distinct categories. Thus, an analysis for this verb can also be proposed. The sentence that tested \textit{saydır-} is provided in (\ref{obl-saydir}).
+\end{sloppypar}
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{obl-saydir} 
+\begingl
+\gla Kürsü-de {[} yerel minibüs şoför-ler-i {hakkında ]\textsubscript{PP}} ve {[} {belediye-ye]\textsubscript{NP}} saydır-dı. //
+\glb podium-\textsc{loc} local minibus driver-\textsc{pl}-\textsc{3p} about and municipality-\textsc{dat} curse-\textsc{pst.3sg} //
+\glft `On the podium, he/she cursed at local minibus drivers and municipality.' //
+\endgl
+\xe
+
+In this example, the first conjunct, \textit{yerel minibüs şoförleri hakkında}, is a PP introduced by the postposition \textit{hakkında}. The second conjunct, \textit{belediyeye}, is a dative NP, which is the typical argument of the verb \textit{saydır-}. Tampering with the postposition or the case of the NP negatively affects the grammaticality of the sentence.  Therefore, we can conclude that the argument of \textit{saydır-} must be either a PP projected by \textit{hakkında} or a dative NP. To capture these facts, the following disjunctive constraint is proposed:
+
+\ex
+\label{saydir:statement}
+($\uparrow$ \textsc{obl}) = \%\textsc{c} $\land$ \\
+\vspace{3pt}\text{[[}(\%\textsc{c cat}) =$_c$ N $\land$ (\%\textsc{c case}) =$_c$ \textsc{dat}\text{]} $\lor$ \\
+\text{[}(\%\textsc{c cat}) =$_c$ P $\land$ (\%\textsc{c pform}) =$_c$ \textsc{hakkinda}\text{]]}
+\xe
+
+In contrast, the verb \textit{sür-} has different requirements for its \textsc{obl} argument. It requires that its \textsc{obl} argument be filled only by an AdvP, an NP in the nominative case, and a PP projected by \textit{boyunca} `throughout/during'. Furthermore, the arguments must express duration or frequency. However, according to LFG's modular architecture, these semantic constraints should not be encoded at the f-structure level but rather at the s(emantic)-structure or a(rgument)-structure. Thus, the constraining statement capturing these facts would be encoded as follows:
+
+\ex
+\label{sur:statement}
+($\uparrow$ \textsc{obl}) = \%\textsc{c} $\land$ \\
+\vspace{3pt}\text{[[}(\%\textsc{c cat}) =$_c$ N $\land$ (\%\textsc{c case}) =$_c$ \textsc{nom}\text{]} $\lor$ \\
+\text{[}(\%\textsc{c cat}) =$_c$ P $\land$ (\%\textsc{c pform}) =$_c$ \textsc{boyunca}\text{]} $\lor$ \\
+(\%\textsc{c cat}) =$_c$ Adv\text{]}
+\xe
+
+\subsubsection{Adjuncts}
+
+Within the scope of the study, unlike adjuncts were observed to function as either verbal or nominal modifiers. However, they are subject to different constraints.
+
+In the case of verbal modifiers, the conjuncts can be realized as PPs, NPs, or AdvPs. Consider sentence (\ref{adj-verbal-a}), where the PP conjunct \textit{tekneler ile} is coordinated with the AdvP \textit{yürüyerek} to modify the main predicate \textit{ulaşılır}. Similarly, in sentence (\ref{adj-verbal-b}), the PP conjunct, \textit{kan ürünleri ile}, is coordinated with the ablative NP, \textit{frengili anneden}, collectively modifying the main verb \textit{bulaşabilir}.
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{adj-verbal} 
+\a\label{adj-verbal-a} 
+\begingl
+\gla ... şehir merkez-i-ne tekne-ler ile veya yürü-yerek ulaş-ıl-ır. //
+\glb ... city center-\textsc{3sg}-\textsc{dat} boat-\textsc{pl} with or walk-\textsc{advz} reach-\textsc{pass}-\textsc{aor}//
+\glft `One can reach the city center with boats or on foot.' \trailingcitation{(trTenTen)} //
+\endgl
+\a\label{adj-verbal-b} 
+\begingl
+\gla Hastalık kan ürün-ler-i ile ve frengi-li anne-den çocuğ-a bulaş-abil-ir. //
+\glb ilness blood product-\textsc{pl}-\textsc{3p} with and syphilis-\textsc{adjz} mother-\textsc{abl} child-\textsc{dat} spread-\textsc{abil}-\textsc{aor} //
+\glft `The disease can be transmitted to the child by blood products and from the mother with syphilis.' \trailingcitation{(trTenTen)} //
+\endgl
+\xe
+
+By contrast, nominal modifiers can be realized either as PPs or AdjPs. Take sentence (\ref{adj-nominala}) as an example, where the PP projected by \textit{boyunca} is coordinated with the AdjP projected by \textit{sınırsız}. Together, they modify the noun \textit{gezme}. Likewise, sentence (\ref{adj-nominalb}) demonstrates a coordinate structure incorporating PP and AdjP conjuncts, headed by \textit{ait} and \textit{olmamış}, respectively.
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{adj-nominal} 
+\a\label{adj-nominala} 
+\begingl
+\gla ... bir yıl boyunca ve sınır-sız gezme ... //
+\glb ... one year throughout and limit-less sightseeing  //
+\glft `... limitless sightseeing for a year ...' \trailingcitation{(trTenTen)} //
+\endgl
+\a\label{adj-nominalb} 
+\begingl
+\gla Daha sonraki dönem-e ait veya tahrip ol-ma-mış plak-lar ... //
+\glb more after era-\textsc{dat} {belong to} or wreck be-\textsc{neg}-\textsc{adjz} record-\textsc{pl} //
+\glft `Records that belong to the later era or are undamaged ... ' \trailingcitation{(trTenTen)} //
+\endgl
+\xe
+
+Overall, the constraints imposed on adjuncts appear to be primarily related to syntactic categories, with other morphosyntactic properties such as \textsc{pform} and \textsc{case} being underspecified. Moreover, these categorical constraints seem to depend solely on the phrase-structure positions of the adjuncts. Hence, the constraints on adjuncts can be succinctly expressed through functional annotations on c-structure rules rather than at the level of individual predicates. Accordingly, the relevant c-structure rule for verbal modifiers could be encoded as follows:
+
+\pex
+
+\vspace{-13pt}
+
+\label{adjverbal_rule0}
+\begin{tabular}{lccc}
+	V$'$ & $\longrightarrow$ & \{PP | NP | AdvP\} & V$'$ \\
+	& & $\downarrow$ $\in$ ($\uparrow$ \textsc{adj}) & $\uparrow$ = $\downarrow$
+	
+\end{tabular}
+\xe
+
+\begin{sloppypar}
+This formulation, however, is not compatible with the approach proposed by Przepiórkowski and Patejuk since the rule represents syntactic categories (e.g., PP or NP) at the level of node labels as in vanilla LFG. To align with their approach, we should transfer the syntactic category information to functional annotations, retaining only the bar-level information at the node labels. Consequently, the appropriate rule is presented in (\ref{adjverbal_rule1}).
+\end{sloppypar}
+
+\pex
+
+\vspace{-13pt}
+
+\label{adjverbal_rule1}
+\begin{tabular}{lccc}
+	X$'$ & $\longrightarrow$ & XP & X$'$ \\
+	& & $\downarrow$ $\in$ ($\uparrow$ \textsc{adj}) & $\uparrow$ = $\downarrow$ \\
+	&			   & ($\downarrow$ \textsc{cat}) $\in_{c}$ \{P, N, Adv\} & ($\downarrow$ \textsc{cat}) =$_{c}$ V  
+\end{tabular}
+\xe
+
+In the modified rule, the first daughter node, XP, is a maximal node. Directly below, the first functional annotation, $\downarrow$ $\in$ ($\uparrow$ \textsc{adj}), indicates that the structure associated with this node is a member of the set of adjuncts, as specified by the \textsc{adj} attribute. This node can map to a singleton in the case of a single adjunct or a hybrid object representing the coordination of multiple adjuncts. Crucially, the second functional annotation restricts XP to have the syntactic categories P, N, or Adv. In the case of coordination, this categorical constraint is distributed to all conjuncts, as \textsc{cat} is encoded as a distributive attribute. The X$'$ node, which immediately follows the XP node, is crucially constrained to be a verbal node. This constraint, on the other hand, ensures that the adjunct node can only attach to a verbal node. 
+
+The rule for nominal modifiers, which is presented in (\ref{adjnom_rule}) shares similarities with the rule for verbal modifiers. However, the nominal modifier rule differs in that the XP node must either be a postpositional or an adjectival phrase. Additionally, the subsequent node is constrained to have the category N.
+
+\pex
+\vspace{-13pt}
+
+\label{adjnom_rule}
+\begin{tabular}{lccc}
+	X$'$ & $\longrightarrow$ & XP & X$'$ \\
+	& & $\downarrow$ $\in$ ($\uparrow$ \textsc{adj}) & $\uparrow$ = $\downarrow$ \\
+	&			   & ($\downarrow$ \textsc{cat}) $\in_{c}$ \{P, Adj\} & ($\downarrow$ \textsc{cat}) =$_{c}$ N  
+\end{tabular}
+\xe
+
+\section{Example analysis} \label{sec:exampleanalysis}
+
+\subsection{Coordination of unlike categories}
+
+In sentence (\ref{unlikecat-example}), both conjuncts serve as predicative arguments of the verb \textit{olmalı}. However, they differ in terms of their syntactic categories. The first conjunct, \textit{doğal kıldan}, is an NP headed by an ablative noun, while the second conjunct, \textit{yumuşak}, is an AdjP.
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{unlikecat-example} 
+\begingl
+\gla Fırça {[} doğal {kıl-dan ]\textsubscript{NP}} ve {[} {yumuşak ]\textsubscript{AdjP}} ol-malı.//
+\glb brush natural bristle-\textsc{abl} and soft be-\textsc{necess} //
+\glft `(A) brush must be of natural bristle and soft.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe
+
+Let us start analyzing this sentence by providing lexical entries for all the words present in the sentence except for the verb.
+
+\pex
+
+\vspace{-11pt}
+
+\label{lexicalentries-analysis}
+\resizebox{0.95\textwidth}{!}{%
+	\begin{tabular}{lllll}
+		& fırça & X &  & ($\uparrow$ \textsc{pred}) = `\textsc{brush}' \\
+		&& &  & ($\uparrow$ \textsc{pers}) = 3 \\
+		&& &  & ($\uparrow$ \textsc{cat}) = N \\
+		&& &  & ($\uparrow$ \textsc{case}) = \textsc{nom} \\
+		&& &  & ($\uparrow$ \textsc{num}) = \textsc{sg} \\
+
+		&&&& \\
+		
+		& kıldan & X &  & ($\uparrow$ \textsc{pred}) = `\textsc{bristle}' \\
+		&& &  & ($\uparrow$ \textsc{pers}) = 3 \\
+		&& &  & ($\uparrow$ \textsc{cat}) = N \\
+		&& &  & ($\uparrow$ \textsc{case}) = \textsc{abl} \\
+		&& &  & ($\uparrow$ \textsc{num}) = \textsc{sg} 
+	\end{tabular}
+	\hspace{18pt}
+	\begin{tabular}{lllll}
+		& yumuşak & X & & ($\uparrow$ \textsc{pred}) = `\textsc{soft}' \\
+		&& &  & ($\uparrow$ \textsc{cat}) = Adj \\
+		
+		&&&& \\
+		
+		&	doğal & X & & ($\uparrow$ \textsc{pred}) = `\textsc{natural}' \\
+		&& &  & ($\uparrow$ \textsc{cat}) = Adj \\
+		
+		&&&& \\
+		& ve & X &  & ($\uparrow$ \textsc{conj}) = \textsc{and} \\
+		& & &  & ($\uparrow$ \textsc{cat}) = CNJ \\
+		& & &  & ($\uparrow$ \textsc{num}) = \textsc{pl} \\
+	\end{tabular}}
+\xe
+
+As can be observed in the lexical entries, the syntactic categories of words are represented through defining equations with the \textsc{cat} attribute. As a result, the conventional LFG designation for indicating the syntactic category of words, which is directly next to the word itself, is now occupied by the placeholder symbol X.
+
+Regarding the verb \textit{olmalı}, the constraint presented in (\ref{ol:statement}) within the context of \textit{ol-} words is appended to the lexical entry of the verb. This incorporation ensures that the specified constraint is consistently applied to any sentence containing the verb \textit{olmalı}.
+
+\pex
+
+\vspace{-11pt}
+
+\label{lexicalentries-verb}
+\resizebox{0.92\textwidth}{!}{%
+\begin{tabular}{lllll}
+& olmalı & X & & ($\uparrow$ \textsc{pred}) = `\textsc{be}$\langle$\textsc{subj}, \textsc{predlink}$\rangle$' \\
+&& &  & ($\uparrow$ \textsc{cat}) = V \\
+&& &  & ($\uparrow$ \textsc{tense}) = \textsc{pres} \\
+&& &  & ($\uparrow$ \textsc{necess}) = $+$ 	\\
+&& &  & ($\uparrow$ \textsc{predlink}) = \%\textsc{c} $\land$ \\
+&& &  &\text{[[}(\%\textsc{c cat}) =$_c$ N $\land$ $\neg$\text{[}(\%\textsc{c case}) =$_c$ \textsc{acc} $\lor$ (\%\textsc{c case}) =$_c$ \textsc{dat}\text{]]} $\lor$ \\
+&& &  & (\%\textsc{c cat})  =$_c$ P $\lor$ \\
+&& &  & (\%\textsc{c cat})  =$_c$ Adj\text{]]}
+\end{tabular}}
+\xe
+
+Given the relative complexity of c-structure rules required for parsing this sentence, a detailed exploration of these rules falls outside the scope of this chapter.\footnote{The relevant c-structure rules are presented later in \S\ref{sec:cstructure-rules}.} Therefore, our focus here is directed towards the relationship between the f-structure of the sentence and the constraining statement embedded within the lexical entry of \textit{olmalı}. Let us proceed by assuming that our c-structure rules have the capability to construct the following f-structure for this sentence:
+
+\pex
+\resizebox{0.58\textwidth}{!}{%
+\begin{avm}
+	\[ pred & `be$\langle$\@1, \@2$\rangle$' \\ 
+	   cat & \textup{V} \\
+	   necess & $+$ \\
+	   tense & pres \\
+	   subj & \@1\[pred & `brush' \\
+	   			case & nom \\
+	   			cat & \textup{N} \\
+	   			num & sg \\
+	   			pers & 3 \] \\
+	   predlink & \@2\[ conj \quad and \\
+	   				 num \quad pl \\
+	   				 \{ \[ pred & `bristle' \\
+	   				 	   case & abl \\
+	   				 	   cat & \textup{N} \\
+	   				 	   num & sg \\
+	   				 	   pers & 3 \\
+	   				 	   adjunct & \{ \[ pred & `natural' \\ 
+	   				 	   				   cat & \textup{Adj} \] \}
+	   				 	\] \\
+	   				 	
+	   				 	\[ pred & `soft' \\
+	   				 	cat & \textup{Adj}
+	   				 	\] \\	
+	   				 \}
+	   				\]
+	   		\]
+\end{avm}}
+\xe
+
+\begin{sloppypar}
+The validity of this f-structure is two-fold. First, it adheres to all well-formedness conditions. Second, it satisfies the morphosyntactic constraints set by \textit{olmalı} on its \textsc{predlink} argument. The f-structure of the initial conjunct fulfills the first condition stipulated in the constraining statement: it possesses the attribute-value pair $\langle$\textsc{cat}, N$\rangle$, and its case attribute value is not \textsc{acc} or \textsc{dat}. Meanwhile, the f-structure of the second conjunct meets the third condition from the constraining statement by containing the attribute-value pair $\langle$\textsc{cat}, A$\rangle$.
+\end{sloppypar}
+
+Now let us alter the morphosyntactic properties of conjuncts and make the first conjunct an accusative NP and the second an AdvP. This sentence, presented below in  (\ref{unlikecat-example2}), is outright ungrammatical.
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{unlikecat-example2} 
+\begingl
+\gla\ljudge{*}Fırça {[} doğal {kıl-ı ]\textsubscript{NP}} ve {[} {yumuşak-ça ]\textsubscript{AdvP}} ol-malı.//
+\glb brush natural bristle-\textsc{acc} and soft-ly be-\textsc{necess} //
+\glft Intended meaning: `(A) brush must be of natural bristle and soft.'//
+\endgl
+\xe
+
+By considering the f-structures of the modified conjuncts, as illustrated in (\ref{ungram-uncat}), we can understand the source of this ungrammaticality. The f-structure of the first conjunct is illicit as it bears one of the disallowed attribute-value pairs, namely $\langle$\textsc{case, acc}$\rangle$.  Similarly, the f-structure of the second conjunct violates the constraints imposed by the verb due to the presence of the attribute-value pair $\langle$\textsc{cat}, Adv$\rangle$.
+
+\noindent
+\begin{minipage}{0.5\textwidth}
+	\pex
+	\label{ungram-uncat}
+	\a \textit{doğal kılı}
+	\a\label{firstconj}
+	\begin{avm}
+	\[ pred & `bristle' \\
+		\textbf{case} & \textbf{acc} \\
+		cat & \textup{N} \\
+		num & sg \\
+		pers & 3 \\
+		adjunct & \{ \[ pred & `natural' \\ 
+		cat & \textup{Adj} \] \}
+		\]
+	\end{avm}
+	\xe
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\textwidth}
+	\vspace{-8em}
+	\pex
+	\a\textit{yumuşakça}
+	\a\label{secondconj}
+	\begin{avm}
+		\[ pred & `softly' \\
+			\textbf{cat} & \textbf{\textup{Adv}}
+		\]
+	\end{avm}
+	\xe
+\end{minipage}
+
+\subsection{Coordination of unlike cases}
+
+In the context of coordination of unlike cases, when the mismatching conjuncts are situated within the c-structure as verbal modifiers, as per the rule outlined in (\ref{adjverbal_rule1}), the cases of the conjuncts can freely mismatch without encountering a constraint. In this respect, the following sentence is deemed grammatical as the mismatching conjuncts occupy the position of verbal adjuncts, wherein no case-related constraint is operational.
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{unlikecase-example} 
+\begingl
+\gla Sonra {[} {robot-ta ]\textsubscript{NPloc}} ve {[} {çatal-la ]\textsubscript{NPins}} ez-meli-yiz.//
+\glb then robot-\textsc{loc} and fork-\textsc{ins} crush-\textsc{necess}-\textsc{1pl} //
+\glft `Then we should crush (it) in the (kitchen) appliance and with a fork.'
+\trailingcitation{(trTenTen)}//
+\endgl
+\xe
+
+However, the proposed analysis does exhibit a specific limitation that deserves attention. The analysis notably permits coordination between nominative and accusative objects, particularly evident in the case of the verb \textit{konuş-} 'talk/converse'. This prediction is problematic, as evidenced by the ungrammaticality of the example provided in (\ref{konus-ungram}).
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{konus-ungram} 
+\begingl
+\gla\ljudge{*}Kolektör-ler sık sık {[} antik {enstrüman-lar-ı ]\textsubscript{NPacc}} veya {[} ticari {bilgi ]\textsubscript{NPnom}} konuş-ur-lar. //
+\glb collector-\textsc{pl}  frequent frequent antique instrument-\textsc{pl}-\textsc{acc} or commercial information talk-\textsc{aor}-\textsc{3pl}//
+\glft `Collectors frequently talk about antique instruments or about commercial information.'//
+\endgl
+\xe
+
+One way of tackling this problem would involve enforcing congruence in the specificity of the conjuncts, thereby preventing the coordination of nominative and accusative objects. This solution entails encoding the specificity attribute, \textsc{spec}, as a distributive property and incorporating the subsequent constraint into the lexical entries of verbs that subcategorize for objects.
+
+\pex
+($\uparrow$ \textsc{obj spec}) = $+$ $\lor$ ($\uparrow$ \textsc{obj spec}) = $-$ 
+\xe
+
+It is important to highlight that this constraint is distinct from the preceding distributive constraints that have been presented. Its evaluation occurs only once for the whole coordination, which enforces that either all object conjuncts must be specific or non-specific.
+
+Notably, the introduction of this constraint carries an implicit assertion pertaining to Turkish grammar: Turkish conjuncts occupying the object position must share identical specificity values. The validation of this assertion, however, requires careful empirical scrutiny, which falls beyond the scope of the present thesis and, therefore, remains a subject for future research.
+
+\section{Conclusion} 
+
+In this chapter, we have attempted to formally model empirical facts about Turkish coordination within the framework of LFG, focusing on theoretical parsimony and broad applicability.
+
+The proposed analysis exemplifies theoretical simplicity by deriving basic coordination facts from fundamental morphosyntactic constraints. It avoids assuming distinct overarching parameters for unlike and like coordination, recognizing that if a specific syntactic position is constrained by disjunctive morphosyntactic rules, then coordination occupying that position can incorporate unlike conjuncts. The central notion behind the analysis lies in evaluating the relevant constraints not on the entire coordinate structure, but on individual conjuncts, which aligns with the empirical observations.
+
+ 

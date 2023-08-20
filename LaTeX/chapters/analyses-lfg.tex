@@ -1,0 +1,358 @@
+\section{Lexical-Functional Grammar} \label{sec:lfg}
+
+\subsection{Overview of LFG architecture}
+
+LFG emerged as a compelling alternative to the prevailing transformative framework in 1970s. It was proposed by Joan Bresnan, a linguist, and Ronald Kaplan, a psychologist. The motivation behind their proposal primarily arose from the transformative framework's shortcomings in terms of psychological plausibility and its limited ability to model crosslinguistic generalizations effectively \citep[pp.\ 1--2]{Dalrymple2019}. Unlike transformative frameworks, as well as other constraint-based frameworks, LFG posits a modular architecture of grammar, wherein distinct forms of linguistic knowledge are represented at different formal levels. Crucially, these levels are interconnected through well-defined mappings (\textit{projections}), enabling the exchange of information across levels.
+
+In LFG, syntax is handled through two key levels: c-structure (constituent structure) and f-structure (functional structure). To elucidate these distinct structures, let us consider the sentence (\ref{tonylikes}) and its corresponding LFG analysis, as portrayed in Figure \ref{fig:tonylikes}.
+
+\pex
+\label{tonylikes}
+Tony likes the book.
+\xe
+
+The syntax of the sentence is captured by two distinct data structures that are systematically connected. C-structure (depicted on the left) is a phrase-structure tree, generated using a specific type of phrase-structure rules encoded in the grammar. At the c-structure level, the information is primarily concerned with the linear order of words and the underlying constituent structure of the sentence. By contrast, the f-structure (presented on the right) represents more abstract syntactic relations and notions in the form of an unordered collection of pairs of attributes and values. Importantly, the f-structure is constructed (denoted by arrows in the diagram) based on the information present on specific c-structure nodes. Let us now elucidate how LFG grammars can construct such analyses.
+
+
+\begin{figure}[H]
+	\centering
+	\resizebox{0.85\textwidth}{!}{%
+	\begin{tikzpicture}[baseline=(current bounding box.south)]
+		\Tree [.S
+		[.NP [.N Tony ] ]
+		[.VP [.V likes ]
+		[.NP [.D the ] [.N$'$ [.N book ] ] ] ]  ]
+		\node [anchor=west] (avm) at (5.5,0.3) { % Adjust the x-coordinate here
+			\begin{avm}
+				\[ pred & `like$\langle$\@1, \@2$\rangle$' \\
+				tense & pres \\
+				subj & \@1\[ pred & `Tony' \\
+				pers & 3 \\
+				num & sg \] \\
+				obj & \@2\[ pred & `book' \\
+				pers & 3 \\
+				num & sg \\
+				def & $+$ \] \]
+			\end{avm}
+		};
+		\coordinate (pobj) at ($(avm.east)!0.68!(avm.west)$);
+		\coordinate (psubj) at ($(avm.east)!0.68!(avm.west)$);
+		
+		% Vertical adjustments
+		\coordinate (obj) at ($(pobj)+(0,-2.0)$);
+		\coordinate (subj) at ($(psubj)+(0,0.1)$);
+		
+		\draw [->, color=green] (0.5,0.2) to[out=5,in=180] (avm.west);
+		\draw [->, color=green] (1.3,-1) to[out=5,in=190] (avm.west);
+		\draw [->, color=green] (0.4,-2) to[out=5,in=190] (avm.west);
+		
+		\draw [->, color=red] (-.6,-1.96) to[out=-5,in=200] (subj);
+		\draw [->, color=red] (-.6,-1.0) to[out=-10,in=200] (subj);
+		
+		\draw [->, color=blue] (2.1,-1.9) to[out=-5,in=180] (obj);
+		\draw [->, color=blue] (1.4,-3.0) to[out=15,in=195] (obj);
+		\draw [->, color=blue] (2.6,-4) to[out=-5,in=190] (obj);
+		\draw [->, color=blue] (2.5,-3) to[out=-5,in=190] (obj);
+		
+	\end{tikzpicture}
+	}
+	\caption{C-structure and f-structure of sentence (\ref{tonylikes})}
+	\label{fig:tonylikes}
+\end{figure}
+
+
+\subsection{LFG grammars}
+
+LFG grammars consist of two fundamental components: a set of c-structure rules and a set of lexical entries. While this setup may initially resemble traditional phrase-structure grammars, LFG introduces several key distinctions. To gain a better understanding of LFG grammars and how they function, let us construct a toy grammar for English in LFG step-by-step. The goal of our toy grammar will be to parse the sentence \textit{Tony likes the book}, as shown in Figure \ref{fig:tonylikes}.
+
+\subsubsection{C-structure rules}
+
+First, let us consider the conventional phrase-structure rules that would allow our grammar to parse the sentence \textit{Tony likes the book}. The rules provided in (\ref{examplecstructure-trad}) can produce the simple phrase-structure tree depicted in Figure \ref{fig:tonylikes}.
+
+\pex
+\vspace{-12pt}
+\label{examplecstructure-trad}
+
+\begin{tabular}{lccc}
+	S & $\longrightarrow$ & NP & VP \\
+	& & & \\
+	VP & $\longrightarrow$ & V & NP \\
+	& & & \\
+	NP & $\longrightarrow$ & \{N | D N$'$\} & \\
+	& & & \\
+	N$'$ & $\longrightarrow$ & N & \\
+\end{tabular}
+\xe
+
+In LFG, however, phrase-structure rules have to be somehow connected to f-structure since syntax in LFG is decomposed into two distinct levels of representation. To establish this connection between c-structure and f-structure, LFG introduces specific annotations called functional annotations on phrase-structure rules. Consequently, the traditional phrase-structure rules in (\ref{examplecstructure-trad}) would be represented in LFG grammars as follows:
+
+\pex
+\vspace{-12pt}
+\label{examplecstructure}
+
+\begin{tabular}{lcccc}
+	S & $\longrightarrow$ & NP & VP &\\
+	&			   & ($\uparrow$ \textsc{subj}) = $\downarrow$ & $\uparrow$ = $\downarrow$ &\\
+	& & & &\\
+	VP & $\longrightarrow$ & V & NP &\\
+	&			   & $\uparrow$ = $\downarrow$ & ($\uparrow$ \textsc{obj}) = $\downarrow$ &\\
+	& & & &\\
+	NP & $\longrightarrow$ & \{\hspace{4pt} N \hspace{15pt} |& \hspace{-20pt} D & \hspace{4pt} N$'$ \hspace{4pt} \}\\
+	& & \hspace{4pt} $\uparrow$ = $\downarrow$ \hspace{15pt} & \hspace{-20pt} $\uparrow$ = $\downarrow$ & $\uparrow$ = $\downarrow$ \hspace{4pt} \\
+	& & & &\\
+	N$'$ & $\longrightarrow$ & N & &\\
+	&	 & $\uparrow$ = $\downarrow$ & & \\
+\end{tabular}
+\xe
+
+In the above representation, c-structure nodes are annotated with two distinct symbols: $\downarrow$ and $\uparrow$. The symbol $\downarrow$ refers to the f-structure associated with the c-structure node itself, while $\uparrow$ refers to the f-structure of the mother node, i.e., the node immediately dominating the c-structure node in question.
+
+In the first rule, the annotation $\uparrow$ = $\downarrow$, directly below the VP node, indicates that the f-structure of VP is to be equated with the f-structure of its mother node, S. This means that the information associated with VP will be integrated into the overall f-structure of the S node. Intuitively, the annotation $\uparrow$ = $\downarrow$ serves the function of propagating information up the tree through unification of f-structures.
+
+The annotation ($\uparrow$ \textsc{subj}) = $\downarrow$ below the NP node is slightly more complex. The first part of the annotation, ($\uparrow$ \textsc{subj}), indicates that there is a \textsc{subj} attribute within the f-structure of the mother node. The remaining part of the annotation, = $\downarrow$, specifies that the value of that \textsc{subj} attribute is the f-structure of the NP node. This rule states that the first NP is the subject of the sentence.  Similarly, the second rule specifies that the f-structure of the V node is directly equated with the f-structure of its mother node, which is VP\@. Additionally, the f-structure associated with the immediately following NP node is assigned as the value of the \textsc{obj} attribute within the mother node's f-structure. Consequently, this rule states that the NP immediately following V is the object of the sentence. As for the NP and N$'$ rules, the $\uparrow$ = $\downarrow$ annotations on the daughters simply serve to ``carry'' and ``unify'' the f-structures of the daughters at the level of their respective mother nodes.
+
+\subsubsection{Lexical entries}
+
+The f-structure information on the nodes is mainly supplied by the lexical entries of the words appearing in a sentence. These lexical entries play a crucial role in providing the necessary linguistic information to build the f-structures. These lexical entries typically include both \textit{defining equations} (signified by the use of the plain ``='' sign), which create attribute-value pairs in the f-structure, and \textit{constraining equations} (signified by the use of the ``=$_c$'' sign), which do not create but only verify the presence of specific attribute-value pairs in the f-structure. Let us examine the lexical entry of the word \textit{likes} in (\ref{lexicalentry-like}) to better understand how the equations in lexical entries work.
+
+
+\pex
+\vspace{-13pt}
+
+\label{lexicalentry-like}
+\begin{tabular}{lllll}
+	&	likes & V & & ($\uparrow$ \textsc{pred}) = `\textsc{like}$\langle$\textsc{subj, obj}$\rangle$' \\
+	&& &  & ($\uparrow$ \textsc{tense}) = \textsc{pres} \\
+	&&&&($\uparrow$ \textsc{subj} \textsc{num}) =$_c$ \textsc{sg}\\
+	& & &  & ($\uparrow$ \textsc{subj} \textsc{pers}) =$_c$ 3 \\
+
+\end{tabular}
+\xe
+
+\begin{sloppypar}
+
+In the lexical entry above, the first is a defining equation that creates an attribute-value pair \mbox{$\langle$\textsc{pred}, `\textsc{like}$\langle$\textsc{subj, obj}$\rangle$'$\rangle$}. Intuitively, this equation indicates that the word \textit{likes} represents the (abstract) predicate \textsc{like} and requires both a subject and an object. Similarly, the following defining equation generates the attribute-value pair \mbox{$\langle$\textsc{tense}, \textsc{pres}$\rangle$}, signifying that the word is in the present tense. 
+\end{sloppypar}
+
+However, the last two equations are constraining equations, responsible for verifying the presence (or absence) of specific features once the entire f-structure of the sentence is constructed. The equation \mbox{($\uparrow$ \textsc{subj} \textsc{num}) =$_c$ \textsc{sg}} ensures that the subject of the verb \textit{likes} must be in the singular form. The presence of this equation means that the f-structure associated with the subject should contain an attribute-value pair \mbox{$\langle$\textsc{num}, \textsc{sg}$\rangle$}. If the sentence's f-structure does not satisfy this constraint, the analysis will be disallowed. 
+
+
+Similarly, the equation \mbox{($\uparrow$ \textsc{subj} \textsc{pers}) =$_c$ 3} ensures that the subject of the verb \textit{likes} must be in the third person. It requires the f-structure value of the \textsc{subj} attribute of the sentence to have an attribute-value pair \mbox{$\langle$\textsc{pers}, 3$\rangle$}. If a sentence violates this constraint, the analysis is ruled out.
+
+Importantly, all the equations employ the $\uparrow$ symbol, allowing the word \textit{likes} to instantiate its f-structure on its mother node, which in this case can only be a V node. The visualization in (\ref{preterminalinstant}) demonstrates how a word instantiates its f-structure on its preterminal node. As depicted, the instantiated f-structure on the V node does not have a \textsc{subj} attribute, as constraining equations cannot generate attribute-value pairs.
+
+\pex
+\label{preterminalinstant}
+\vspace{-2em}
+
+	\resizebox{0.93\textwidth}{!}{%
+		\begin{tikzpicture}[baseline=(current bounding box.south)]
+			\tikzset{every tree node/.style={align=center,anchor=north}}
+			\Tree [.{...} [.V likes\\{($\uparrow$\textsc{pred}) = `\textsc{like}$\langle$\textsc{subj,obj}$\rangle$'}\\{($\uparrow$ \textsc{tense}) = \textsc{pres}}\\{($\uparrow$ \textsc{subj} \textsc{num}) =$_c$ \textsc{sg}}\\{($\uparrow$ \textsc{subj} \textsc{pers}) =$_c$ 3} ] ]
+			\node [anchor=west] (avm) at (5.5,0) { % Adjust the x-coordinate here
+				\begin{avm}
+					\[ pred & `like$\langle$subj,obj$\rangle$' \\
+					tense & pres \]
+				\end{avm}
+			};
+
+			
+			\draw [->, color=green] (0.5,-1.3) to[out=0,in=180] (avm.west);
+		\end{tikzpicture}
+	}
+\xe
+
+Let us now expand the lexicon of our toy grammar by adding other lexical entries so that our grammar can recognize the sentence \textit{Tony likes the book}. All the lexical entries in our toy grammar are listed in (\ref{lexicalentries}).
+
+\pex
+
+\vspace{-13pt}
+
+\label{lexicalentries}
+\resizebox{0.58\textwidth}{!}{%
+\begin{tabular}{lllll}
+	&Tony & N &  & ($\uparrow$ \textsc{pred}) = `\textsc{tony}' \\
+	&& &  & ($\uparrow$ \textsc{pers}) = 3 \\
+	&& &  & ($\uparrow$ \textsc{num}) = \textsc{sg} \\
+	
+	
+	& &&& \\
+	
+	
+	
+	&	likes & V & & ($\uparrow$ \textsc{pred}) = `\textsc{like}$\langle$\textsc{subj, obj}$\rangle$' \\
+	&&&&($\uparrow$ \textsc{subj} \textsc{num}) =$_c$ \textsc{sg}\\
+	& & &  & ($\uparrow$ \textsc{subj} \textsc{pers}) =$_c$ 3 \\
+	&& &  & ($\uparrow$ \textsc{tense}) = \textsc{pres} \\
+	
+	&&&& \\
+	
+	
+	&	the & D & & ($\uparrow$ \textsc{def}) = + \\
+	
+	&&&& \\
+	
+	
+	&	book & N &  & ($\uparrow$ \textsc{pred}) = `\textsc{book}' \\
+	&& &  & ($\uparrow$ \textsc{pers}) = 3 \\
+	&& &  & ($\uparrow$ \textsc{num}) = \textsc{sg} \\
+\end{tabular}}
+\xe
+
+\subsubsection{Full analysis}
+
+Now that we have expanded the lexicon of our toy grammar with additional lexical entries, we can analyze the sentence \textit{Tony likes the book} using the formulated c-structure rules and lexical entries. The fully annotated c-structure, along with the corresponding f-structure, is presented in Figure \ref{fig:tonyhasreadfull}. The f-structure on the right makes explicit the mapping between the c-structure nodes and the elements in the f-structure through indices on nodes.\footnote{The indices on c-structure nodes are not part of the grammar. They are inserted on the nodes to facilitate understanding the mapping between the c-structure and f-structure.} 
+
+\begin{figure}[H]
+	\centering
+	\resizebox{0.98\textwidth}{!}{%
+		\begin{tikzpicture}[sibling distance=.25cm, level distance=1.38cm]
+			\Tree [.S\textsubscript{\textit{f1}}
+			[.\node[align=center] {($\uparrow$ \textsc{subj}) = $\downarrow$\\NP\textsubscript{\textit{f2}}}; [.\node[align=center] {$\uparrow$ = $\downarrow$\\N\textsubscript{\textit{f4}}}; Tony ] ]
+			[.\node[align=center] {$\uparrow$ = $\downarrow$\\VP\textsubscript{\textit{f3}}}; [.\node[align=center] {$\uparrow$ = $\downarrow$\\V\textsubscript{\textit{f5}}}; likes ]
+			[.\node[align=center] {($\uparrow$ \textsc{obj}) = $\downarrow$\\NP\textsubscript{\textit{f6}}}; [.\node[align=center] {$\uparrow$ = $\downarrow$\\D\textsubscript{\textit{f7}}}; the ] [.\node[align=center] {$\uparrow$ = $\downarrow$\\N$'$\textsubscript{\textit{f8}}}; [.\node[align=center] {$\uparrow$ = $\downarrow$\\N\textsubscript{\textit{f9}}}; book ] ] ] ] ]
+			\node [anchor=west] (avm) at (5.5,0) { % Adjust the x-coordinate here
+				\begin{avm}
+					\textit{f1, f3, f5:}\[ pred & `like$\langle$\@1, \@2$\rangle$' \\
+					tense & pres \\
+					subj & \textit{f4, f2: \@1}\[ pred & `Tony' \\
+					pers & 3 \\
+					num & sg \] \\
+					obj & \textit{f6, f7, f8, f9: \@2}\[ pred & `book' \\
+					pers & 3 \\
+					num & sg \\
+					def & $+$ \] \]
+				\end{avm}
+			};
+		\end{tikzpicture}
+	}
+	\caption{Annotated c-structure and f-structure of sentence (\ref{tonylikes})}
+	\label{fig:tonyhasreadfull}
+\end{figure}
+
+\begin{sloppypar}
+The c-structure represents the hierarchical syntactic structure of the sentence. At the top, we have the S node, representing the sentence as a whole. The S node has two daughters: NP\textsubscript{\textit{f2}} and VP\textsubscript{\textit{f3}}. The NP\textsubscript{\textit{f2}} node represents the subject \textit{Tony}, and its f-structure is supplied by the lexical entry for \textit{Tony}, which is relayed through the N\textsubscript{\textit{f4}} node. The VP\textsubscript{\textit{f3}} node represents the verb phrase \textit{likes the book}, and its f-structure is built from the lexical entry for \textit{likes} and the f-structure of the NP\textsubscript{\textit{f6}} node, which is assigned as the value of the \textsc{obj} attribute. The f-structure associated with the NP\textsubscript{\textit{f6}} node is constructed by the integration of the information provided by the lexical entries for \textit{the} and \textit{book}.
+\end{sloppypar}
+
+\subsubsection{Well-formedness conditions}
+
+In LFG, the syntactic well-formedness of a sentence depends on several factors. If a sentence cannot be parsed validly according to our c-structure rules, it is not recognized by our grammar. This means our grammar fails to construct both the c-structure and f-structure for the sentence. However, being parsed by the grammar is not sufficient for a string to be considered syntactically well-formed; the constructed f-structure must also satisfy certain conditions.
+
+An f-structure is deemed valid if it fulfills three overarching conditions simultaneously: Uniqueness, Completeness, and Coherence. The Uniqueness condition stipulates that each attribute in an f-structure should be associated with only one value. Consequently, while different attributes may map to the same value, an attribute cannot be mapped to two distinct values. The Completeness condition ensures that the obligatory arguments of a predicate are present in the f-structure. For instance, if the predicate \textit{like} requires both a subject and an object, the relevant attribute-value pairs incorporating \textsc{subj} and \textsc{obj} should be present in the f-structure. Consequently, the sentence \textit{Tony likes} violates the Completeness condition as the \textsc{obj} requirement of \textit{likes} is not fulfilled. The Coherence condition mandates that no additional governable function (i.e., \textsc{subj, obj, obl} etc.) should be present in the f-structure. This condition rules out sentences like \textit{my mother cried sadness}, as the verb \textit{cry} does not take an object.
+
+Additionally, f-structures can be rendered invalid if they violate constraining equations imposed on them. For example, if we introduce the word \textit{children} to our lexicon as in (\ref{fstructure-children}), our toy grammar would still parse the sentence \textit{Children likes the books} given our c-structure rules and lexical entries and produce a corresponding f-structure representation. However, the sentence would still be considered ungrammatical by our grammar since the plural subject \textit{children} is incompatible with the constraining equation, ($\uparrow$ \textsc{subj} \textsc{num}) =$_c$ \textsc{sg}, found in the lexical entry of the verb \textit{likes}.
+
+\pex
+\vspace{-13pt}
+
+\label{fstructure-children}
+\begin{tabular}{lllll}
+	&	children & N & & ($\uparrow$ \textsc{pred}) = `\textsc{child}' \\
+	&& &  & ($\uparrow$ \textsc{pers}) = 3 \\
+	&&&&($\uparrow$ \textsc{num}) = \textsc{pl}\\
+	
+\end{tabular}
+\xe
+
+\pex
+Children likes the books.
+\vspace{7pt}
+
+\label{lexicalentry-children}
+\resizebox{0.3\textwidth}{!}{%
+\begin{avm}
+	\[ pred & `like$\langle$\@1, \@2$\rangle$' \\
+	tense & pres \\
+	subj & \@1\[ pred & `child' \\
+	pers & 3 \\
+	num & \textbf{pl} \] \\
+	obj & \@2\[ pred & `book' \\
+	pers & 3 \\
+	num & sg \\
+	def & $+$ \] \]
+\end{avm}}
+\xe
+
+
+\subsection{Coordination in LFG}
+
+\subsubsection{Sets and distributivity}
+
+In LFG, coordinate structures are represented as sets in the f-structure. This representation decision is based on two fundamental observations: 1) There is no limit to the number of elements that can be coordinated in a given coordinate structure (abstracting away from working memory limitations); 2) The conjuncts in a coordinate structure are equal, meaning there is typically no hierarchical relationship between them. 
+
+LFG sets are subject to fundamental set-theoretic operations such as union and intersection. However, sets representing coordinate structures in LFG are unique in that they can have their own attribute-value pairs alongside their elements. This distinction arises from the observation that coordinate structures may have properties independent from their conjuncts. Hence, the sets representing coordinate structures are called \textit{hybrid objects} \citep[][pp.\ 49--50]{Dalrymple2019}.
+
+Consider the f-structure (\ref{f-structure:tonyandpaulie}) for the sentence \textit{Tony and Paulie run}. The \textsc{subj} attribute maps to an f-structure that encompasses both a set (of conjuncts) and its own features $\langle$\textsc{num, pl}$\rangle$ and $\langle$\textsc{conj, and}$\rangle$. This hybrid structure allows us to explain why the verb \textit{run} is grammatical instead of \textit{runs} despite both conjuncts being singular nouns. The constraining equation associated with \textit{runs} demands that its subject must be singular, represented by the necessary presence of $\langle$\textsc{num, sg}$\rangle$ in the subject f-structure. However, in the hybrid structure associated with the \textsc{subj} attribute, we find the presence of $\langle$\textsc{num, pl}$\rangle$, which clashes with the constraint imposed by \textit{runs}.
+
+\pex
+\label{f-structure:tonyandpaulie}
+\resizebox{0.37\textwidth}{!}{%
+\begin{avm}
+	\[ 
+	
+	pred & `run$\langle$\@1$\rangle$' \\
+	tense & pres \\
+	
+	subj & \@1
+	
+	\[ conj \quad and \\ 
+	\textbf{num} \quad \textbf{pl} & \\ 
+	
+	\{
+	\[ pred & `tony' \\
+	pers & 3 \\
+	num & sg \] \\
+	
+	\[ pred & `paulie' \\
+	pers & 3 \\
+	num & sg \]
+	\} 
+	\]  
+	\]
+\end{avm}
+}
+\xe
+
+These hybrid objects are constructed with set-theoretic annotations on c-structure rules.  Consider the basic NP coordination rule in (\ref{example:coord_cstructure}). The NP nodes corresponding to conjuncts are adorned with the special notation $\uparrow$ $\in$ $\downarrow$, indicating that the associated f-structure of the NP node belongs to a set. 
+
+\pex
+
+\vspace{-12pt}
+
+\label{example:coord_cstructure}
+\begin{tabular}{lcccc}
+	NP & $\longrightarrow$ & NP$^{+}$ \hspace{15pt} & Cnj \hspace{15pt} & NP \\
+	   & & $\uparrow$ $\in$ $\downarrow$ \hspace{15pt} & $\uparrow$ = $\downarrow$ \hspace{15pt} & $\uparrow$ $\in$ $\downarrow$ 
+\end{tabular}
+\xe
+
+The information introduced by the lexical entry of the conjunction is directly mapped to the f-structure that encompasses the set, as denoted by ``$\uparrow$ = $\downarrow$'' beneath the Cnj node. As demonstrated in (\ref{f-structure:tonyandpaulie}), the information associated with the lexical entry of \textit{and} directly maps to the hybrid object and is not encapsulated as an additional member of the set. 
+
+\pex
+\vspace{-13pt}
+
+\label{lexentry-and}
+\begin{tabular}{lllll}
+	&	and & Cnj & & ($\uparrow$ \textsc{conj}) = \textsc{and} \\
+	&&&&($\uparrow$ \textsc{num}) = \textsc{pl}
+\end{tabular}
+\xe
+
+Furthermore, the properties associated with the coordination are classified into two classes: 1) distributive and 2) non-distributive properties. They are formally defined in \citet[][p.\ 779]{DalrympleKaplan2000} as follows:
+
+\pex
+\textit{Distributive} and \textit{nondistributive} features:\\
+
+For any \textit{distributive} property $P$ and set $s$, $P(s)$ iff $\forall$$f$ $\in$ $s.P(f)$.\\
+For any \textit{non-distributive} property $P$ and set $s$, $P(s)$ iff $P$ holds of $s$ itself.
+\xe
+
+Thus, if a feature is encoded as distributive in an LFG grammar, it applies to all conjuncts encapsulated in the set. For example, if \textsc{case} is encoded as a distributive property and it is assigned to coordinate structure, then all conjuncts must bear the assigned case value if there is no overriding constraint. By contrast, non-distributive properties do not distribute to the elements of the set (f-structure of individual conjuncts) and only act as independent properties of the set. In this regard, when a property is encoded as non-distributive, conjuncts are allowed to have discrepant features pertaining to that property. 
+
+\subsubsection{CAT predicate}
+
+CAT predicate is a formal device implicated in the analysis of unlike coordination in LFG \citep[see][]{DalrympleKaplan2000, Dalrymple2017}. The device provides a means for specifying the simple categorical requirements of a given predicate on its arguments.
+
+\begin{sloppypar}
+Formally, CAT predicate is a function that takes two arguments: an f-structure $f$ and a set of syntactic categories $C$. Its purpose is to determine whether there exists a syntactic category in the input set $C$ that also maps to the given f-structure $f$. For example, the fact that the verb \textit{become} constrains its predicative argument (which is encoded as the value of \textsc{predlink} attribute in multiple LFG analyses) to either be an NP or an AdjP can be captured with the statement \mbox{CAT(($\uparrow$ \textsc{predlink}), \{NP, AdjP\}))}, which evaluates to true if the f-structure associated with \textsc{predlink} function is mapped to either an  NP or an AP.
+\end{sloppypar}

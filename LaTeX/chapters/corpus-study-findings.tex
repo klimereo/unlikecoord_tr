@@ -1,0 +1,423 @@
+\section{Results} \label{sec:corpusresults}
+
+\subsection{Coordination of unlike categories}
+
+As can be seen in Table \ref{CAT-corpus-general-table}, 9 queries in total targeted distinct unlike category coordination configurations in the corpus. Among the 227,177 sentences (hits) collectively returned by the queries, 1687 were sampled, and 137 instances out of 1687 were determined (based on the criteria explained in the previous section) to be valid instances of unlike category coordination.
+
+The primary factor contributing to the imbalance in the number of samples across different configurations is the occurrence of queries that generated an excessive number of duplicate or poorly annotated sentences. This necessitated a flexible approach to sampling rates for various queries. However, in the case of the PP \& NP configuration, the sheer number of queries naturally resulted in a higher sample count. The limitation to the specified search configurations is driven by the potential for alternative configurations to result in inaccurate outcomes and false positives. For instance, configurations like NP \& PP (the reverse of PP \& NP) tend to produce examples where the NP serves as the complement of the postpositional head. Similarly, the reverse of NP \& AdjP and NP \& AdvP configurations can trigger erroneous instances due to nominalizing suffixes that extend their scope over the entire conjunct, transforming the initial AdjP or AdvP conjuncts into NPs derived from adjectival or adverbial roots.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{lrrrr}
+		\multicolumn{1}{c}{\textbf{Categories}} & \textbf{Queries} & \textbf{Hits} & \textbf{Sampled} & \textbf{Verified} \\ \hline \hline
+		PP \& NP       & 4 & 173,774 & 527  & 33  \\
+		PP \& AdvP     & 1 & 1,523  & 240  & 20  \\
+		PP \& AdjP     & 1 & 25,272 & 240  & 29  \\
+		NP \& AdjP     & 1 & 26,318 & 390  & 29  \\
+		NP \& AdvP     & 2 & 290    & 290  & 26  \\ \hline \hline
+		\textbf{Total} & 9 & 227,177 & 1687 & 137
+	\end{tabular}
+	\caption{General results of unlike category investigation in the corpus}
+	\label{CAT-corpus-general-table}
+\end{table}
+
+\subsubsection{PP \& NP}
+
+The unlike category coordination where the first conjunct is a postpositional phrase and the second conjunct is a noun phrase was searched by 4 distinct queries (see Appendix \ref{app:cqlqueries} for the queries). Out of 4 queries, 3 targeted PP \& NP coordinate structures that occupy the typical complement position of verbs with the following stems: \textit {ol-} `be/become', \textit{düşün-} `think/consider', \textit{konuş-} `talk/converse/speak'. Out of 527 sampled sentences, 33 occurrences were verified.
+
+As can be seen in Table \ref{CAT-corpus-PPNP-function-table}, all the validated occurrences of PP \& NP coordination incorporate conjuncts that match in their functions. 
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{lr}
+		\textbf{Functions} & \textbf{\begin{tabular}[c]{@{}r@{}}Number of \\ examples\end{tabular}} \\ \hline \hline
+		
+		Predicate \& Predicate & 14 \\
+		Object \& Object       & 3  \\ 
+		Adjunct \& Adjunct     & 16 \\ \hline \hline
+		\textbf{Total}         & 33
+	\end{tabular}
+	\caption{Functional roles of PP \& NP conjuncts}
+	\label{CAT-corpus-PPNP-function-table}
+\end{table}
+
+\begin{sloppypar}
+There are in total 14 PP \& NP coordination instances where both conjuncts are predicative arguments. They were found exclusively through a query based on the verbal stem \textit{ol-} `be/become'. An example of PP \& NP coordination where both conjuncts are predicative complements can be seen in (\ref{PPNP-pred}).
+\end{sloppypar}
+
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{PPNP-pred} \begingl
+\gla Bu iş {[} sevgi {ile ]\textsubscript{PP}} ve {[} {gönül-den ]\textsubscript{NP}} ol-malı. //
+\glb This job love with and soul-\textsc{abl} be-\textsc{necess} //
+\glft `This work should be done with love and from heart.' \trailingcitation{(trTenTen)} //
+\endgl
+\xe
+
+In 3 examples, PP \& NP conjuncts function as objects. These examples were discovered within the context of a query targeting the typical complement position of verbs whose stem are \textit{konuş-} `talk/converse'. An example of this configuration can be seen in (\ref{PPNP-obj}). 
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{PPNP-obj} \begingl
+\gla Kolektör-ler sık sık {[} antik enstrüman-lar {hakkında ]\textsubscript{PP}} veya {[} ticari {bilgi ]\textsubscript{NP}} konuş-ur-lar. //
+\glb collector-\textsc{pl}  frequent frequent antique instrument-\textsc{pl} about or commercial information talk-\textsc{aor}-\textsc{3pl}//
+\glft `Collectors frequently talk about antique instruments or about commercial information.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe
+
+The PP conjunct in the glossed sentence in (\ref{PPNP-obj}) can undergo passivization, which is an indication that it is an object. It is important to note here, however, that the postpositional head of the first conjunct, \textit{hakkında} `about', has been systematically classified as a locative noun by the automatic POS-tagger employed in the corpus. The present study classifies \textit{hakkında} as a postposition since it is classified as a type of postposition by virtually all recent descriptive grammars of Turkish.\footnote{See \citet[pp.\ 100--102]{kornfilt97}, \citet[pp.\ 225--226]{asli_kerslake_2005}, and \citet[p.\ 107]{asli_kerslake_2010}.} The second conjunct is an object, as it not only bears the accusative case, which is the only case used for marking specific direct objects in Turkish, but can undergo passivization as well. 
+
+In 16 out of 33 examples, PP \& NP conjuncts are identified as adjuncts. Such examples were primarily obtained within the context of a general query that did not contain any specifications external to the coordination. A (simplified \& modified) example of PP \& NP coordination where both conjuncts are adjuncts is represented in (\ref{PPNP-adjunct}).
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{PPNP-adjunct} \begingl
+\gla Suy-u {[} çamaşır yıka-mak {için ]\textsubscript{PP}} ve {[} {banyo-da ]\textsubscript{NP}} kullan-ıyor-um. //
+\glb water-\textsc{acc} clothes wash-\textsc{inf} for and bathroom-\textsc{loc} use-\textsc{pres.prog}-\textsc{1sg}  //
+\glft `I use the water for doing laundries and in the bathroom.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe
+
+\subsubsection{PP \& AdvP}
+
+The unlike category coordination where the first conjunct is a PP and the second conjunct is an AdvP was explored via one query only. This query, however, was a rather general one and did not specify any external governors. From the results of this general query, 240 sentences were sampled, and 20 genuine cases of PP \& AdvP coordination were obtained. 
+
+Among the verified sentences, all the PP \& AdvP conjuncts are adjuncts in their respective sentences. Examples of this configuration can be seen in the two attested sentences presented below. In sentence (\ref{PPadvP-adjunct}), while the first conjunct is a PP headed by the postposition \textit{birlikte} `together', the second conjunct is an adverb derived from a verbal stem, \textit{açıkla-} `explain' through an adverbalizing suffix \textit{-arak}. 
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{PPadvP-adjunct} \begingl
+\gla Kural-lar-ı {[} öğrenci-ler-le {birlikte ]\textsubscript{PP}} ve {[} {açıkla-(y)arak ]\textsubscript{AdvP}} koy-malı. //
+\glb rule-\textsc{pl}-\textsc{acc} student-\textsc{pl}-\textsc{ins} together and explain-\textsc{advz} establish-\textsc{necess} //
+\glft `Rules must be established with students and by providing explanations.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe
+
+The sentence (\ref{PPadvP-adjunct1}) incorporates a PP headed by \textit{gibi} `like' and an AdvP, \textit{profesyonelce} `professionally', derived from an adjectival base through \textit{-ce}, which is an adverbalizing suffix.
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{PPadvP-adjunct1} \begingl
+\gla {[} Gerçek bir iş insanı {gibi ]\textsubscript{PP}} ve {[} {profesyonel-ce ]\textsubscript{AdvP}} tokalaş-ın. //
+\glb {}genuine \textsc{indf.det} business person like and {}professional-\textsc{advz} {shake hands}-\textsc{2p.imp} //
+\glft `Shake hands like a proper business person and professionally.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe
+
+
+\subsubsection{PP \& AdjP}
+
+\begin{sloppypar}
+There was only one general query investigating the PP \& AdjP coordination. Among the 240 sampled sentences, 29 occurrences were determined to be genuine instances of PP \& AdjP coordination. As demonstrated in Table \ref{CAT-corpus-PPadjp-function-table}, all the verified instances incorporate conjuncts with matching functions. 
+\end{sloppypar}
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{lr}
+		\textbf{Functions} & \textbf{\begin{tabular}[c]{@{}r@{}}Number of \\ examples\end{tabular}} \\ \hline \hline
+		Adjunct \& Adjunct & 13 \\
+		Predicate \& Predicate   & 16 \\ \hline \hline
+		\textbf{Total}         & 29
+	\end{tabular}
+	\caption{Functional roles of PP \& AdjP conjuncts}
+	\label{CAT-corpus-PPadjp-function-table}
+\end{table}
+
+In 13 unlike category coordination instances, the conjuncts are analyzed as adjuncts. A (simplified \& modified) example of this configuration is demonstrated in (\ref{PPadjP-adjunct}). Here, the first conjunct is a PP headed by \textit{göre} `according to', and the second is an AdjP whose head is a derived adjective, \textit{ölçülü} `with measure'.
+
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{PPadjP-adjunct} \begingl
+\gla Gözlüğ-ü {[} bir gaye-ye {göre ]\textsubscript{PP}} ve {[} {ölçü-lü ]\textsubscript{AdjP}} yap-tı. //
+\glb eyeglasses-\textsc{acc} {}\textsc{indf.det} purpose-\textsc{dat} {according to}{} and measure-\textsc{adjz} make-\textsc{pst}//
+\glft `(He/she) made the eyeglasses with a purpose and with measure.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe
+
+\begin{sloppypar}
+The remaining 16 instances, however, contain conjuncts that are determined to be predicative arguments governed by \textit{ol-} `be/become' words. In example (\ref{PPadjP-preds}), the first conjunct is a PP whose head is the postposition \textit{yönelik} `for/towards', while the second is a simple AdjP headed by a simple adjective \textit{net} \mbox{`plain/clear'.}
+\end{sloppypar}
+
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{PPadjP-preds} \begingl
+\gla Konuşma-lar-ınız {[} hedef-e {yönelik ]\textsubscript{PP}} ve {[} {net ]\textsubscript{AdjP}} ol-malı.//
+\glb speech-\textsc{pl}-\textsc{2pl.poss} goal-\textsc{dat} towards and plain be-\textsc{necess} //
+\glft `Your speeches should be to the point and plain.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe
+
+\subsubsection{NP \& AdjP}
+
+NP \& AdjP coordination was investigated with only one query, which targeted unlike category coordination occupying the typical complement position of \textit{ol} `be/become'. The query was looking for constructions comparable to the NP \& AdjP coordination typically discussed within the context of English data in the literature, such as the ones illustrated in (\ref{NP-AdjP-Eng}).
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]<intro-unlikecat-english> \label{NP-AdjP-Eng}
+\a Pat is [a Republican]\textsubscript{NP} and [proud of it]\textsubscript{AdjP}. \trailingcitation{\citep[p.\ 117, ex.\ (2b)]{sagetal1985}}
+\a Fred became [a professor]\textsubscript{NP} and [proud of his work]\textsubscript{AdjP}. \trailingcitation{\citep[p.\ 35, ex.\ (6a)]{Dalrymple2017}}
+\xe
+
+Among the sampled 390 sentences, 29 occurrences of NP \& AdjP coordination were determined to be valid. As expected, in all examples, the conjuncts are predicative complements. In (\ref{NPadjP-preds}), two attested instances of Turkish NP \& AdjP coordination can be observed.  
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{NPadjP-preds} 
+\a
+\begingl
+\gla Bu {[} çok büyük bir {proje ]\textsubscript{NP}} ve {[} çok {masraf-lı ]\textsubscript{AdjP}} ol-acak.//
+\glb this very big \textsc{indf.det} project and very cost-\textsc{adjz} be-\textsc{fut} //
+\glft `This will be a very big project and very costly.' \trailingcitation{(trTenTen)}//
+\endgl
+\a
+\begingl
+\gla Fırça {[} doğal {kıl-dan ]\textsubscript{NP}} ve {[} {yumuşak ]\textsubscript{AdjP}} ol-malı.//
+\glb brush natural bristle-\textsc{abl} and soft be-\textsc{necess} //
+\glft `(A) brush must be of natural bristle and soft.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe
+
+\subsubsection{NP \& AdvP}
+
+The NP \& AdvP coordination was located via two distinct verb-specific queries. One of the queries targeted the typical complement positions of verbs with the stem \textit{sür-}, which can either mean `last/continue' or `spread/apply'. The query, however, attempted to constrain the search to the former use, `last/continue', as this use had previously been observed to take oblique arguments realized either as NPs or AdvPs. The other query searched for NP \& AdvP coordination within the context of verbs with the stem \textit{hallet-} `handle'.
+
+As shown in Table \ref{CAT-corpus-NPadvP-function-table}, 26 genuine instances of NP \& AdvP coordination were extracted from the sample. However, not all verified examples contain conjuncts with matching functional roles. Although the majority of examples are classified as having matching functions, 4 instances have conjuncts with discrepant functions.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{lr}
+		\textbf{Functions} & \textbf{\begin{tabular}[c]{@{}r@{}}Number of \\ examples\end{tabular}} \\ \hline \hline
+		Adjunct \& Adjunct   & 19 \\
+		Oblique \& Adjunct  & 4  \\
+		Oblique \& Oblique & 3  \\
+		\hline \hline
+		\textbf{Total}       & 26
+	\end{tabular}
+	\caption{Functional roles of NP \& AdvP conjuncts}
+	\label{CAT-corpus-NPadvP-function-table}
+\end{table}
+
+There were in total 3 NP \& AdvP examples where both conjuncts in each instance are classified as the oblique arguments of \textit{sür-} `last/continue'. A (simplified \& modified) example can be seen in (\ref{NPadvP-durs}), where the first conjunct is an NP headed by \textit{hafta} `week', while the second conjunct is an AdvP headed by the adverb \textit{yıllarca} `for years', which is derived through an adverbalizing suffix \textit{-ca}. 
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{NPadvP-durs} \begingl
+\gla Bu program {[} her {hafta ]\textsubscript{NP}} ve {[} {yıl-lar-ca ]\textsubscript{AdvP}} sür-ecek.//
+\glb this programme every week and year-\textsc{pl}-\textsc{advz} last-\textsc{fut} //
+\glft `This programme will run every week and for years.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe
+
+The majority of the verified NP \& AdvP instances incorporate conjuncts that function as adjuncts. While oblique \& oblique instances were extracted from the \textit{sür-} query only, adjunct \& adjunct instances were supplied by both \textit{sür-} and \textit{hallet-} queries. An example of NP \& AdvP coordination where both conjuncts are adjuncts can be seen in (\ref{NPadvP-adjs}).
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{NPadvP-adjs} \begingl
+\gla Her şey {[} {eğitim-le ]\textsubscript{NP}} ve {[} {konuş-arak ]\textsubscript{AdvP}} + halled-il-ebil-ir.//
+\glb every thing education-\textsc{ins} and talk-\textsc{advz} handle-\textsc{pass}-\textsc{abil}-\textsc{aor} //
+\glft `Everything can be handled with education and communication.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe
+
+In 4 examples, the conjuncts differ not only in their categories but also in their functions. This configuration, as exemplified in (\ref{NPadvP-duradj}), is rather unexpected, as all the verified examples we have seen so far have conjuncts with matching functions.
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{NPadvP-duradj} \begingl
+\gla İtalyan-lar-a karşı yerli savaşı {[} çetin {biçim-de ]\textsubscript{NP}} ve {[} {yıl-lar-ca ]\textsubscript{AdvP}} sür-dü.//
+\glb Italian-\textsc{pl}-\textsc{dat} against domestic war bitter shape-\textsc{loc} and year-\textsc{pl}-\textsc{advz} last-\textsc{pst} //
+\glft `The domestic struggle against the Italians lasted bitterly and for years.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe 
+
+To account for such examples, it is possible to posit that, for some native speakers, the verb \textit{sür-} 'last/continue' can function as a one-argument verb that only requires a subject. This interpretation would classify both conjuncts as adjuncts. This hypothesis gains some support from the fact that all four instances were found within the context of the verb \textit{sür-} `last/continue,' and they all exhibited an adjunct \& oblique configuration similar to the example presented in (\ref{NPadvP-duradj}). While the one-argument interpretation of \textit{sür-} does not align with the author's native speaker intuitions, this possibility should not be entirely disregarded.
+
+\subsection{Coordination of unlike cases}
+
+As Table \ref{CASE-corpus-general-table} shows, the coordination of unlike cases was investigated in six different conditions where the combinatorial possibilities between different Turkish cases\footnote{The nominative case is excluded from the queries as it is susceptible to suspended affixation (see \S \ref{sec:turkishcasesandsa}).} are modeled in terms of unlike case coordination. The encoding scheme of the conditions in Table \ref{CASE-corpus-general-table} is explained as follows: Let us assume that $\phi$ is a variable that can assume any Turkish case; then $\neg$NP\textsubscript{$\phi$} \& NP\textsubscript{$\phi$} signifies a coordinate structure where the second conjunct is an NP in the $\phi$ case while the first conjunct is an NP that bears a case that is not $\phi$. For example, coordinate structures whose first conjunct is an NP headed by a non-accusative noun and whose second conjunct is an NP headed by an accusative noun are represented by $\neg$NP\textsubscript{acc} \& NP\textsubscript{acc}.
+
+6 queries corresponding to six conditions returned 75,753 hits, out of which 840 were sampled for manual verification. From this sample, 51 examples are classified as genuine instances of unlike case coordination. There were, however, three conditions for which no examples could be found. This result, as discussed in the next section, is expected due to the nature of Turkish cases. 
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{lrlrr}
+		\textbf{Cases Configurations} & \textbf{Queries} & \textbf{Hits}                       & \multicolumn{1}{l}{\textbf{Sampled}} & \multicolumn{1}{l}{\textbf{Verified}} \\ \hline \hline
+		$\neg$NP\textsubscript{acc} \& NP\textsubscript{acc} & 1 & 3,969  & 140 & 0  \\
+		$\neg$NP\textsubscript{dat} \& NP\textsubscript{dat} & 1 & 15,659 & 140 & 0  \\
+		$\neg$NP\textsubscript{gen} \& NP\textsubscript{gen} & 1 & 22,455 & 140 & 0  \\
+		$\neg$NP\textsubscript{ins} \& NP\textsubscript{ins} & 1 & 9,524  & 140 & 30 \\
+		$\neg$NP\textsubscript{abl} \& NP\textsubscript{abl} & 1 & 8,437  & 140 & 6  \\
+		$\neg$NP\textsubscript{loc} \& NP\textsubscript{loc} & 1 & 15,709 & 140 & 15 \\ \hline \hline
+		\textbf{Total}                & \textbf{6}      & \multicolumn{1}{r}{\textbf{75,753}} & \textbf{840}                         & \textbf{51}                          
+	\end{tabular}
+	\caption{General results of unlike case coordination investigation in the corpus}
+	\label{CASE-corpus-general-table}
+\end{table}
+
+\subsubsection{Unfruitful conditions: [$\neg$NP\textsubscript{acc} \& NP\textsubscript{acc}], [$\neg$NP\textsubscript{dat} \& NP\textsubscript{dat}], [$\neg$NP\textsubscript{gen} \& NP\textsubscript{gen}]}
+
+The fact that certain conditions did not produce any results can be explained based on the morphosyntactic nature of Turkish cases. As previously discussed, there is a rather strict association between grammatical cases and functions in Turkish, where one grammatical case is predominantly used for one grammatical function.
+
+Based on these facts, the unfruitful conditions denote a coordinate structure where the functions of conjuncts are forced to conflict with each other in most cases. To illustrate, let us look at $\neg$NP\textsubscript{acc} \& NP\textsubscript{acc}. In this condition, the second conjunct is expected to be a specific direct object, as this grammatical function is exclusively marked with the accusative case. Since this condition constrains the first conjunct to bear a non-accusative case, the first conjunct will never be a specific direct object whichever case it may bear and, consequently, be in functional conflict with the second conjunct. Although the object function can also be realized by the nominative case to mark non-specificity, in a configuration where the first conjunct is in nominative and the second is in accusative can only be interpreted as a coordination of like cases due to suspended affixation. The same principle applies to other unfruitful conditions as well, since the functions that are mapped to dative and genitive cases are almost exclusively realized by them. 
+
+\subsubsection{[$\neg$NP\textsubscript{ins} \& NP\textsubscript{ins}]}
+
+\begin{sloppypar}
+[$\neg$NP\textsubscript{ins} \& NP\textsubscript{ins}] was a relatively fruitful condition.\footnote{As discussed earlier,  NP\textsubscript{ins} could be reinterpreted as PP depending on one's specific theoretical perspective on the Turkish case system. However, if we were to reinterpret NP\textsubscript{ins} as PP, all the examples in this section (including other examples containing an instrumental NP conjunct) would be rendered as instances of coordination of unlike categories (NP \& PP).} A total of 30 examples are classified as genuine cases of unlike coordination, which is a considerable amount considering the small sample size of 140 sentences.
+\end{sloppypar}
+
+As can be seen in Table \ref{CASE-corpus-insins}, all the unlike coordination examples in this condition incorporate conjuncts that match in their function, which is adjunct across examples. As far as the grammatical cases of the individual conjuncts are considered, the overwhelming majority of the coordinate structures appear to conjoin a locative and an instrumental noun, while a few examples incorporate an ablative and an instrumental conjunct. 
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{llr}
+		\multicolumn{1}{c}{\textbf{Functions}} &
+		\multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Conjunct \\ cases\end{tabular}}} &
+		\multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Number of \\ examples\end{tabular}}} \\ \hline \hline
+		\multirow{2}{*}{Adjunct \& Adjunct} & Locative \& Instrumental & 26          \\ \cline{2-3} 
+		& Ablative \& Instrumental & 4           \\ \hline \hline
+		\textbf{Total}                      &                          & \textbf{30}
+	\end{tabular}
+	\caption{[$\neg$NP\textsubscript{ins} \& NP\textsubscript{ins}] results}
+	\label{CASE-corpus-insins}
+\end{table}
+
+The (simplified) sentence in (\ref{NPinsins0}) contains an unlike case coordination of a locative and an instrumental noun, where both conjuncts act as adjuncts.
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{NPinsins0} \begingl
+\gla {[} Doğru {yer-de ]\textsubscript{NP\textsubscript{loc}}} ve {[} doğru {antrenör-le ]\textsubscript{NP\textsubscript{ins}}} + çalış-(ı)yor-uz.//
+\glb right place-\textsc{loc} and right trainer-\textsc{ins} work-\textsc{pres.prog}-\textsc{1pl} //
+\glft `(We) work in the right place and with the right trainer.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe 
+
+The (simplified) sentence in (\ref{NPinsins1}) is an unlike case coordination where an ablative and an instrumental noun are conjoined. Likewise, the conjuncts are classified as adjuncts. 
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{NPinsins1} \begingl
+\gla Proje-ler-iniz-i {[} {el-den]\textsubscript{NP\textsubscript{abl}}} veya {[} {kargo-(y)la ]\textsubscript{NP\textsubscript{ins}}} teslim ed-ebil-ir-siniz.//
+\glb project-\textsc{pl}-\textsc{2pl.poss}-\textsc{acc} hand-\textsc{abl} or cargo-\textsc{ins} delivery do-\textsc{abil}-\textsc{aor}-\textsc{2pl}//
+\glft `(You) can deliver your projects by hand or by courier.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe 
+
+\subsubsection{[$\neg$NP\textsubscript{abl} \& NP\textsubscript{abl}]}
+
+Among the 140 sentences sampled for the condition [$\neg$NP\textsubscript{abl} \& NP\textsubscript{abl}], only 6 genuine cases of unlike coordination were found. As can be seen in Table \ref{CASE-corpus-ablabl}, although 5 of the verified examples incorporate conjuncts with matching functions, the conjuncts of one instance have conflicting functions. 
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{llr}
+		\multicolumn{1}{c}{\textbf{Functions}} &
+		\multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Conjunct \\ cases\end{tabular}}} &
+		\multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Number of \\ examples\end{tabular}}} \\ \hline \hline
+		\multirow{2}{*}{Adjunct \& Adjunct} & Locative \& Ablative & 3          \\ \cline{2-3} 
+		& Instrumental \& Ablative & 2          \\ \hline
+		Oblique \& Adjunct                  & Dative \& Ablative       & 1          \\ \hline \hline
+		\textbf{Total}                      &                          & \textbf{6}
+	\end{tabular}
+	\caption{[$\neg$NP\textsubscript{abl} \& NP\textsubscript{abl}] results}
+	\label{CASE-corpus-ablabl}
+\end{table}
+
+The (simplified) sentence in (\ref{NPablabl1}) contains an unlike case coordination where the first conjunct is a locative noun and the second conjunct is an ablative noun. They both act as adjuncts in the sentence. 
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{NPablabl1} \begingl
+\gla Proje-ye {[} doğru {zaman-da ]\textsubscript{NP\textsubscript{loc}}} ve {[} doğru {fiyat-tan ]\textsubscript{NP\textsubscript{abl}}} gir-di-m.//
+\glb project-\textsc{dat} right time-\textsc{loc} and right price-\textsc{abl} enter-\textsc{pst}-\textsc{1sg} //
+\glft `I entered the project at the right time and at the right price.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe 
+
+The following is a (simplified) instance of unlike case coordination where the first conjunct is an instrumental noun and the second is an ablative noun. Again, both conjuncts are adjuncts.
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{NPablabl2} \begingl
+\gla O-na {[} saf bir {zihin-le ]\textsubscript{NP\textsubscript{ins}}} ve {[} {gönül-den ]\textsubscript{NP\textsubscript{abl}}} yönel-di-k.//
+\glb s/he-\textsc{dat} pure \textsc{indf.det} mind-\textsc{ins} and heart-\textsc{abl} turn-\textsc{pst}-\textsc{1pl}//
+\glft `(We) turned to her/him with a pure mind and from heart.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe 
+
+Finally, the (simplified)  sentence in (\ref{NPablabl3}) is the only example of absolute unlike case coordination where conjuncts also differ in terms of their functions. The first conjunct, \textit{aynı yöne} `to the same direction', is the obligatory oblique argument of the matrix verb while the second conjunct, \textit{aynı yerden} `from the same place', is an adjunct in the ablative case. 
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{NPablabl3} \begingl
+\gla Öğretmen-im-le {[} aynı {yön-e ]\textsubscript{NP\textsubscript{dat}}} ve {[} aynı {yer-den ]\textsubscript{NP\textsubscript{abl}}} bak-mı-yor-uz.//
+\glb teacher-\textsc{poss.1sg}-with same direction-\textsc{dat} and same place-\textsc{abl} look-\textsc{neg}-\textsc{pres.prog}-\textsc{1pl} //
+\glft `My teacher (and I) do not look in the same direction and from the same place.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe 
+
+Although the acceptability of this example is more controversial compared to other examples presented so far, it neither is a downright ungrammatical sentence nor leads to considerable parsing difficulty. A parallel explanation, akin to the one provided for counter-examples in the context of unlike category coordination (involving the verb \textit{sür-}), can be extended to this example as well. Namely, it is possible that, for certain native speakers, one-argument interpretation of the verb \textit{bak-} `look' exists, leading to the interpretation of conjuncts as adjuncts.
+
+\subsubsection{[$\neg$NP\textsubscript{loc} \& NP\textsubscript{loc}]}
+
+Out of 140 sampled sentences, 15 unlike case coordination instances were classified as genuine cases of the condition [$\neg$NP\textsubscript{loc} \& NP\textsubscript{loc}]. As summarized in Table \ref{CASE-corpus-locloc}, all the verified instances incorporate conjuncts that are adjuncts. Across all examples, the first conjuncts are observed to be either in the instrumental or in the ablative case. In this respect, instrumental NP seems to be predominantly coordinated with a locative NP, which is also supported by the findings from the condition [$\neg$NP\textsubscript{ins} \& NP\textsubscript{ins}] (see Table \ref{CASE-corpus-insins}).
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{llr}
+		\multicolumn{1}{c}{\textbf{Functions}} &
+		\multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Conjunct \\ cases\end{tabular}}} &
+		\multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Number of \\ examples\end{tabular}}} \\ \hline \hline
+		\multirow{2}{*}{Adjunct \& Adjunct} & Instrumental \& Locative & 13          \\ \cline{2-3} 
+		& Ablative \& Locative     & 2           \\ \hline \hline
+		\textbf{Total}                      &                          & \textbf{15}
+	\end{tabular}
+	\caption{[$\neg$NP\textsubscript{loc} \& NP\textsubscript{loc}] results}
+	\label{CASE-corpus-locloc}
+\end{table}
+
+Sentence (\ref{NPlocloc1}) exemplifies the configuration where the first conjunct is an instrumental NP and the second is a locative NP. The conjuncts are both adjuncts, like the other examples categorized under this configuration.
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{NPlocloc1} \begingl
+\gla Pamuk-lu çarşaf-lar-ı {[} yumuşak {deterjan-la ]\textsubscript{NP\textsubscript{ins}}} ve {[} soğuk {su-da ]\textsubscript{NP\textsubscript{loc}}} yıka-yın.//
+\glb cotton-\textsc{adjz} sheet-\textsc{pl}-\textsc{acc} soft detergent-\textsc{ins} and cold water-\textsc{loc} wash-\textsc{2p.imp}  //
+\glft `Wash the cotton sheets with mild detergent and in cold water.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe 
+
+In the (simplified \& modified) sentence in (\ref{NPlocloc2}), we can observe the configuration where the first conjunct is an ablative NP and the second is a locative NP. Likewise, both conjuncts are adjuncts.
+
+\pex[glspace=!1em,everygla={},everyglb={},aboveglbskip=-.15ex, interpartskip=15pt]
+\label{NPlocloc2} \begingl
+\gla Tüm özellik-ler {[} aynı {arayüz-den ]\textsubscript{NP\textsubscript{abl}}} ve {[} basit bir {şekil-de ]\textsubscript{NP\textsubscript{loc}}} yönet-il-ir.//
+\glb all feature-\textsc{pl} same interface-\textsc{abl} and simple \textsc{indf.det} form-\textsc{loc} manage-\textsc{pass}-\textsc{aor} //
+\glft `All the features are managed from the same interface and in a simple manner.' \trailingcitation{(trTenTen)}//
+\endgl
+\xe 
+
+\section{Discussion and conclusion} \label{sec:corp disc and concl}
+
+The corpus investigation resulted in 188 verified instances of unlike coordination. Out of 188 verified instances, 137 are examples of unlike category coordination, while there are only 51 examples of unlike case coordination. This substantial difference, however, can be attributed to the smaller sample size and more general queries adopted in unlike case coordination part of the corpus investigation. With more specific queries and a larger sample size, we can expect this difference to become insignificant. Although the total absence of examples in three unlike case conditions is a significant finding, it is not unexpected.
+
+It is visible in Table \ref{CAT-summaryresults} and Table \ref{CASE-summaryresults} that the overwhelming majority of both unlike category and case coordination instances incorporate conjuncts that match with respect to their grammatical functions. Against 133 instances of unlike category coordination where conjuncts match in their functions, there are only 4 instances of absolute unlike category coordination where conjuncts, in addition to their categories, differ with respect to their functions. When it comes to unlike case coordination, all the verified examples have conjuncts with matching functions, except for one example.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{lrr}
+		\textbf{Categories of conjuncts} & \multicolumn{1}{l}{\textbf{Like Functions}} & \multicolumn{1}{l}{\textbf{Unlike Functions}} \\ \hline \hline
+		PP \& NP       & 33           & 0          \\
+		PP \& AdvP     & 20           & 0          \\
+		PP \& AdjP     & 29           & 0          \\
+		NP \& AdjP     & 29           & 0          \\
+		NP \& AdvP     & 22           & 4          \\ \hline \hline
+		\textbf{Total} & \textbf{133} & \textbf{4}
+	\end{tabular}
+	\caption{Summary of the results of unlike category coordination}
+	\label{CAT-summaryresults}
+\end{table}
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{lrr}
+		\textbf{Cases of conjuncts} & \multicolumn{1}{l}{\textbf{Like Functions}} & \multicolumn{1}{l}{\textbf{Unlike Functions}} \\ \hline \hline
+		Ablative \& Instrumental & 6           & 0          \\
+		Dative \& Ablative       & 0           & 1          \\
+		Locative \& Ablative     & 5           & 0          \\
+		Locative \& Instrumental & 39          & 0          \\ \hline \hline
+		\textbf{Total}           & \textbf{50} & \textbf{1}
+	\end{tabular}
+	\caption{Summary of the results of unlike case coordination}
+	\label{CASE-summaryresults}
+\end{table}
+
+\begin{sloppypar}
+The results obtained from the corpus corroborate the hypothesis that Turkish coordination is driven by the underlying grammatical functions of conjuncts rather than their surface-level morphosyntactic properties, such as case or syntactic category. The strength of the empirical support, however, differs between the two predictions underlying the hypothesis. First, the hypothesis predicts finding genuine instances of unlike coordination in Turkish corpora as some grammatical functions in Turkish can surface in different syntactic categories and grammatical cases. This prediction seems to be borne out by the sheer number of genuine instances of unlike coordination extracted from the corpus. Second, the hypothesis additionally predicts that the verified occurrences of unlike coordination will have conjuncts with matching functions. The empirical support for this claim, however, is not as strong as the support for the first prediction. Even though the overwhelming majority of the extracted instances conform to the second prediction, the existence of a few counter-examples is sufficient to question the validity of the hypothesis. Nevertheless, the explanation positing a 1-argument interpretation of the verbs involved remains plausible, given the scope and scale of the corpus.
+\end{sloppypar}
+
+As discussed previously, neither the absence nor the existence of a syntactic construction in corpora can be regarded as conclusive evidence. This point is especially relevant in the case of complex and atypical syntactic phenomena, which do not easily lend themselves to straightforward corpus analyses. Furthermore, the validity of the examples extracted from corpora cannot be taken for granted, especially if the corpus in question is made up of textual materials automatically collected from the Internet. Overall, although the findings of the corpus study lend considerable support to the hypothesis, they must be supplemented by native speaker judgments before any conclusions are drawn.
