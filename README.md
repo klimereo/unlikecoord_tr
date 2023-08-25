@@ -43,10 +43,6 @@ The `valency-dictionaries` folder comprises the constructed valency dictionaries
 
 ## Citation
 
-If you find this research repository useful in your own work, please consider citing:
-
-## Citation
-
 If you find this research useful in your own work, please consider citing:
 
 **APA:**
