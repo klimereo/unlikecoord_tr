@@ -66,6 +66,6 @@ For inquiries or further discussion about the research, feel free to contact me 
 
 ## License
 
-This research and associated materials are released under the [MIT License](LICENSE). You are free to use, modify, and distribute the content as long as you include the original copyright notice and include a copy of the license with any derivative works.
+This research and associated materials are released under the [MIT License](LICENSE.txt). You are free to use, modify, and distribute the content as long as you include the original copyright notice and include a copy of the license with any derivative works.
 
-Please review the [LICENSE](LICENSE) file for more details.
+Please review the [LICENSE](LICENSE.txt) file for more details.
