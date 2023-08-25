@@ -1,0 +1,454 @@
+baþla(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Acc', 'Loc', 'Dat', 'Ins', 'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+yak(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom', 'Acc'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+de(V):{'ObjCat': {'PROPN', 'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Nom', 'Loc', 'Gen', 'Dat', 'Ins', 'Abl'}, 'XCompCat': {'NOUN'}, 'XCompCase': {'Nom'}}
+ol(V):{'ObjCat': {'PROPN', 'NOUN'}, 'ObjCase': {'Nom', 'Acc'}, 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Loc', 'Nom', 'Dat', 'Ins', 'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+gülümse(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+git(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Dat', 'Abl', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+yok(NonVerb):None
+yap(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Abl', 'Nom', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+ilgili(NonVerb):None
+içeri(NonVerb):None
+yemek(NonVerb):None
+anlat(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom', 'Acc'}, 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Loc', 'Nom', 'Dat', 'Ins', 'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+bað(NonVerb):None
+bul(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom', 'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+ara(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Nom', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+baþvur(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Dat', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+niçin(NonVerb):None
+yalnýz(NonVerb):None
+ancak(NonVerb):None
+ama(NonVerb):None
+buyur(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+üzer(NonVerb):None
+efsane(NonVerb):None
+güneybatý(NonVerb):None
+kýz(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+murat(NonVerb):None
+pilot(NonVerb):None
+gel(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Loc', 'Nom', 'Dat', 'Ins', 'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+iste(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+yer(NonVerb):None
+ayrýl(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+kýzar(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+al(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom', 'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Abl', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+mantýk(NonVerb):None
+gör(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Ins', 'Nom', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+izle(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+karýþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Dat', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+ya(NonVerb):None
+Türker(NonVerb):None
+iyi(NonVerb):None
+iç(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom', 'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+topla(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+çarp(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+ulaþ(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Abl', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+özelleþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+kýz(NonVerb):None
+sor(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+bir(NonVerb):None
+unut(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Ins'}, 'XCompCat': set(), 'XCompCase': set()}
+konuþ(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Ins', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+çýkar(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+ýþýlda(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+düþür(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+gerçekleþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Ins', 'Loc', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+Maryline(NonVerb):None
+gerek(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Nom', 'Loc', 'Dat', 'Ins', 'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+danýþma(NonVerb):None
+harca(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+tüt(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+korkut(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+geçir(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom', 'Acc'}, 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Dat', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+eþlik(NonVerb):None
+marka(NonVerb):None
+boca(NonVerb):None
+öl(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+salýk(NonVerb):None
+sev(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+býrak(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom', 'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+üz(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'PROPN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+kur(NonVerb):None
+bit(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+Tokum(NonVerb):None
+belir(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Loc', 'Nom', 'Dat', 'Ins', 'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+yat(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Ins', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+yaþýnda(NonVerb):None
+razý(NonVerb):None
+saçmala(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+geç(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Ins', 'Abl', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+oðul(NonVerb):None
+baþka(NonVerb):None
+örtüþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Ins'}, 'XCompCat': set(), 'XCompCase': set()}
+oyun(NonVerb):None
+alýntý(NonVerb):None
+dikkat(NonVerb):None
+þey(NonVerb):None
+evet(NonVerb):None
+her(NonVerb):None
+gir(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+çevir(V):{'ObjCat': {'PROPN', 'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+ver(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom', 'Acc'}, 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Dat', 'Abl', 'Loc', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+dalgýn(NonVerb):None
+anla(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Abl', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+doluþ(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+'(NonVerb):None
+dayan(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+açýkla(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Nom', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+bitir(V):{'ObjCat': {'PROPN', 'NOUN'}, 'ObjCase': {'Nom', 'Acc'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+var(NonVerb):None
+düþün(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+neyse(NonVerb):None
+söz(NonVerb):None
+farklýlaþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+bu(NonVerb):None
+bak(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Dat', 'Ins', 'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+önem(NonVerb):None
+koro(NonVerb):None
+götür(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Abl'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+aç(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Abl', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+boz(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+koþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+ihtiyar(NonVerb):None
+öðren(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Dat', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+numara(NonVerb):None
+hatta(NonVerb):None
+bil(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Loc', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+uza(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+getir(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Dat', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+koru(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+gibi(NonVerb):None
+fakat(NonVerb):None
+can(NonVerb):None
+talep(NonVerb):None
+çýk(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Loc', 'Nom', 'Dat', 'Ins', 'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+yakala(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+öner(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Dat', 'Nom', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+gerçek(NonVerb):None
+toz(NonVerb):None
+böylece(NonVerb):None
+deðil(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+mahzun(NonVerb):None
+asýl(NonVerb):None
+sanki(NonVerb):None
+acaba(NonVerb):None
+neden(NonVerb):None
+söyle(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Dat', 'Nom', 'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Loc', 'Nom', 'Gen', 'Dat', 'Ins'}, 'XCompCat': set(), 'XCompCase': set()}
+karar(NonVerb):None
+san(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+yetkili(NonVerb):None
+ait(NonVerb):None
+ýlýk(NonVerb):None
+yaþa(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Ins', 'Nom', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+yardým(NonVerb):None
+göster(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Abl', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+kaydet(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Abl', 'Nom', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+deðiþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+oku(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'PROPN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+anne(NonVerb):None
+temsil(NonVerb):None
+irkil(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+taþý(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Ins', 'Nom', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+ekle(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+doðru(NonVerb):None
+oyna(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Nom', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+çark(NonVerb):None
+kabahatli(NonVerb):None
+kapsa(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+hayýr(NonVerb):None
+büyü(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+yayýmla(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Ins', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+dinle(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Ins'}, 'XCompCat': set(), 'XCompCase': set()}
+yüksel(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+ayrýca(NonVerb):None
+hesap(NonVerb):None
+biri(NonVerb):None
+Allah(NonVerb):None
+ciddi(NonVerb):None
+memnun(NonVerb):None
+yet(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Ins', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+mýrýldan(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Nom', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+doð(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'PROPN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+kes(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom', 'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+yarat(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+kavrul(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+Ýnanoðlu(NonVerb):None
+ibaret(NonVerb):None
+at(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+iliþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+döv(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+...(NonVerb):None
+Nesrin(NonVerb):None
+fotoðraf(NonVerb):None
+sür(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+katlan(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+var(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Abl', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+þaþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+haber(NonVerb):None
+ürküt(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+yorum(NonVerb):None
+meðer(NonVerb):None
+akýl(NonVerb):None
+ne(NonVerb):None
+say(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+sar(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom', 'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+deðil(NonVerb):None
+esasen(NonVerb):None
+koy(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Gen', 'Ins'}, 'XCompCat': set(), 'XCompCase': set()}
+dokun(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+yolla(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+hem(NonVerb):None
+buluþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+karþýla(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+algýla(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Ins'}, 'XCompCat': set(), 'XCompCase': set()}
+Hadi(NonVerb):None
+barýþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+yaz(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+ele(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+tertemiz(NonVerb):None
+atla(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Loc', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+bekle(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+vaat(NonVerb):None
+terk(NonVerb):None
+dol(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+kalk(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+uy(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+devrim(NonVerb):None
+in(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+ayýr(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+takýr(NonVerb):None
+alaturka(NonVerb):None
+kurucu(NonVerb):None
+çekin(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+öp(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+ona(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+kardeþ(NonVerb):None
+öyle(NonVerb):None
+utan(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+kol(NonVerb):None
+bas(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+kiþi(NonVerb):None
+uyan(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Ins', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+zaman(NonVerb):None
+belirle(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+mola(NonVerb):None
+iki(NonVerb):None
+haykýr(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+ön(NonVerb):None
+Kemal(NonVerb):None
+yutturmaca(NonVerb):None
+peki(NonVerb):None
+þöyle(NonVerb):None
+civar(NonVerb):None
+yerleþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+figüran(NonVerb):None
+aþk(NonVerb):None
+hareket(NonVerb):None
+imkan(NonVerb):None
+alkolik(NonVerb):None
+kurul(NonVerb):None
+Özilhan(NonVerb):None
+çalýþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Abl', 'Loc', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+otur(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Ins', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+yönel(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Ins', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+cevap(NonVerb):None
+orta(NonVerb):None
+kesin(NonVerb):None
+gönder(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'PROPN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+dur(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+yumuþa(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+azal(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'PROPN'}, 'OblCase': {'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+hatýrla(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+sevgili(NonVerb):None
+etkile(V):{'ObjCat': {'PROPN'}, 'ObjCase': {'Acc'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+tür(NonVerb):None
+fýsýlda(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+peþ(NonVerb):None
+sat(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+beðen(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+sun(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+kal(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Abl', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+anlaþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Abl', 'Loc', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+evlen(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+ta(NonVerb):None
+taþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+acil(NonVerb):None
+o(NonVerb):None
+kendi(NonVerb):None
+merkez(NonVerb):None
+nüfus(NonVerb):None
+oyuncu(NonVerb):None
+sýcak(NonVerb):None
+heyecanlý(NonVerb):None
+su(NonVerb):None
+çýkar(NonVerb):None
+"(NonVerb):None
+sýfýrla(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+sebze(NonVerb):None
+diyalog(NonVerb):None
+titre(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+büyük(NonVerb):None
+bayýl(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+tabii(NonVerb):None
+gerekli(NonVerb):None
+diken(NonVerb):None
+meraklý(NonVerb):None
+göz(NonVerb):None
+yasakla(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Loc', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+not(NonVerb):None
+Özer(NonVerb):None
+Yakutistan(NonVerb):None
+sanatçý(NonVerb):None
+ye(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+yardýmcý(NonVerb):None
+çek(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+soluklan(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+geri(NonVerb):None
+kez(NonVerb):None
+ben(NonVerb):None
+karý(NonVerb):None
+orospu(NonVerb):None
+yücel(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+konu(NonVerb):None
+baþ(NonVerb):None
+ayak(NonVerb):None
+saðla(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Gen', 'Dat', 'Nom', 'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+kabul(NonVerb):None
+okul(NonVerb):None
+Benokan(NonVerb):None
+iþ(NonVerb):None
+karþýlýk(NonVerb):None
+kapa(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+terbiyeli(NonVerb):None
+tane(NonVerb):None
+çünkü(NonVerb):None
+üzüntü(NonVerb):None
+yudumla(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+inan(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Dat', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+ovala(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+þarký(NonVerb):None
+suçlu(NonVerb):None
+Ayhancý(NonVerb):None
+küçül(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+bayram(NonVerb):None
+galiba(NonVerb):None
+deð(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+sýra(NonVerb):None
+sonra(NonVerb):None
+el(NonVerb):None
+ifade(NonVerb):None
+sakýz(NonVerb):None
+sonuç(NonVerb):None
+kulak(NonVerb):None
+görün(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+kýskan(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+ad(NonVerb):None
+Teyzeci(NonVerb):None
+Ayhan(NonVerb):None
+sevin(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+çiz(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+iddia(NonVerb):None
+nere(NonVerb):None
+dost(NonVerb):None
+avukat(NonVerb):None
+Osmanlý(NonVerb):None
+takýl(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+savun(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'PROPN', 'NOUN'}, 'OblCase': {'Loc', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+düþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+taný(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+orman(NonVerb):None
+kamaþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+herkes(NonVerb):None
+et(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+kuruluþ(NonVerb):None
+sahip(NonVerb):None
+belli(NonVerb):None
+Unakýtan(NonVerb):None
+cins(NonVerb):None
+bahçe(NonVerb):None
+engelle(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+zor(NonVerb):None
+yol(NonVerb):None
+kullan(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+öðretmen(NonVerb):None
+onbir(NonVerb):None
+sok(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+özellikle(NonVerb):None
+ruh(NonVerb):None
+tartýþ(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': {'NOUN'}, 'OblCase': {'Ins', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+perhiz(NonVerb):None
+tamam(NonVerb):None
+lazým(NonVerb):None
+salla(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+ikaz(NonVerb):None
+deðerlen(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+incele(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+pespembe(NonVerb):None
+þaþýr(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+tehlike(NonVerb):None
+kaç(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+þu(NonVerb):None
+soyutla(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Abl', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+seç(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+katký(NonVerb):None
+gül(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+fizikçi(NonVerb):None
+öde(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Loc', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+aristokrat(NonVerb):None
+hisset(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+dön(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'PROPN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+caba(NonVerb):None
+tut(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Abl', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+yeþil(NonVerb):None
+sevgi(NonVerb):None
+teþekkür(NonVerb):None
+tuzla(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+amaçla(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+hedefle(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Ins', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+ki(NonVerb):None
+fýrsat(NonVerb):None
+sal(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+baðla(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+ÝTÜ(NonVerb):None
+durum(NonVerb):None
+oyala(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+baðlayýcý(NonVerb):None
+araþtýr(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Acc'}, 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+süit(NonVerb):None
+büz(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+temizlen(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+zayýf(NonVerb):None
+uyar(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+Bakýrköy(NonVerb):None
+vekil(NonVerb):None
+dal(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Ins'}, 'XCompCat': set(), 'XCompCase': set()}
+besin(NonVerb):None
+görüþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+aðbi(NonVerb):None
+tutuþ(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+yasak(NonVerb):None
+nasýl(NonVerb):None
+þan(NonVerb):None
+rol(NonVerb):None
+denizci(NonVerb):None
+yýl(NonVerb):None
+kulaklý(NonVerb):None
+alýþ(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+sap(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+merak(NonVerb):None
+kekele(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+uyarý(NonVerb):None
+ilinti(NonVerb):None
+takým(NonVerb):None
+hayoþ(NonVerb):None
+öngör(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Loc'}, 'XCompCat': set(), 'XCompCase': set()}
+duy(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Abl'}, 'XCompCat': set(), 'XCompCase': set()}
+vazgeç(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+kat(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+seslen(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': {'NOUN'}, 'OblCase': {'Dat'}, 'XCompCat': set(), 'XCompCase': set()}
+telefon(NonVerb):None
+bura(NonVerb):None
+diren(V):{'ObjCat': set(), 'ObjCase': set(), 'OblCat': set(), 'OblCase': set(), 'XCompCat': set(), 'XCompCase': set()}
+elektrik(NonVerb):None
+icat(NonVerb):None
+kur(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
+dene(V):{'ObjCat': {'NOUN'}, 'ObjCase': {'Nom'}, 'OblCat': {'NOUN'}, 'OblCase': {'Dat', 'Nom'}, 'XCompCat': set(), 'XCompCase': set()}
