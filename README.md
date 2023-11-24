@@ -47,7 +47,7 @@ If you find this research useful in your own work, please consider citing:
 
 **APA:**
 
-*Şenşekerci, B. (2023). "Coordination of Unlikes in Turkish" [Master's Thesis. University of Warsaw.] To be published in Archiwum Prac Dyplomowych Uniwersytetu Warszawskiego.*
+*Şenşekerci, B. (2023). "Coordination of Unlikes in Turkish" [Master's Thesis. University of Warsaw.]*
 
 **Bibtex:**
 ```bibtex
@@ -55,8 +55,7 @@ If you find this research useful in your own work, please consider citing:
   author       = {\c{S}en\c{s}ekerci, B.},
   title        = {Coordination of Unlikes in Turkish},
   year         = {2023},
-  school       = {University of Warsaw},
-  note         = {To be published in Archiwum Prac Dyplomowych Uniwersytetu Warszawskiego}
+  school       = {University of Warsaw}
 }
 ```
 
