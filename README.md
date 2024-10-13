@@ -52,7 +52,7 @@ If you find this research useful in your own work, please consider citing:
 **Bibtex:**
 ```bibtex
 @mastersthesis{sensekerci2023,
-  author       = {\c{S}en\c{s}ekerci, B.},
+  author       = {\c{S}en\c{s}ekerci, Berke},
   title        = {Coordination of Unlikes in Turkish},
   year         = {2023},
   school       = {University of Warsaw}
