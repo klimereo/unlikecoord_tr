@@ -61,7 +61,7 @@ If you find this research useful in your own work, please consider citing:
 
 ## Contact Information
 
-For inquiries or further discussion about the research, feel free to contact me at [b.sensekerci@student.uw.edu.pl](mailto:b.sensekerci@student.uw.edu.pl).
+For inquiries or further discussion about the research, feel free to contact me at [b.sensekerci@uw.edu.pl](mailto:b.sensekerci@uw.edu.pl).
 
 ## License
 
